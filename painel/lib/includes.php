@@ -3,7 +3,7 @@
 
     // include("connect_local.php");
     include("/appinc/connect.php");
-    $con = AppConnect('portal');
+    $con = AppConnect('politica');
 
     // include("/appinc/connect.php");
     include("fn.php");
