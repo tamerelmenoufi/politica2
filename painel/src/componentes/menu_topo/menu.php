@@ -18,7 +18,7 @@
     </div>
 
     <div  class="d-none d-sm-block">
-      <h5 class="p-1">Gestão Política</h5>
+      <h5 class="p-3">Gestão Política</h5>
     <!-- <img src="img/logomenup.png" style="height:40px; margin-right:20px;" > -->
 </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
