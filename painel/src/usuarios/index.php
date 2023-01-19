@@ -2,7 +2,7 @@
         include("{$_SERVER['DOCUMENT_ROOT']}/politica/painel/lib/includes.php");
 
     if($_POST['delete']){
-      $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
+      $query = "update usuarios set deletado = '1' where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
     }
 
@@ -53,7 +53,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from usuarios order by nome asc";
+                  $query = "select * from usuarios where deletado != '1' order by nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
