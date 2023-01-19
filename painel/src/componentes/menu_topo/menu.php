@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/portal/painel/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/politica/portal/painel/lib/includes.php");
 ?>
 <style>
   .MenuLogin{
@@ -11,8 +11,8 @@
 <nav class="navbar navbar-expand bg-light">
   <div class="container-fluid">
     <div data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-     
-    
+
+
 
       <i class="fa-solid fa-bars"></i>
     </div>
@@ -40,9 +40,9 @@
  <a class="nav-link dropdown-toggle d-block d-sm-none" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    <i class="fa-solid fa-user"></i>
                 </a>
-                
+
             <li class="nav-item dropdown">
-                
+
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
                     <li class="MenuLogin">
                       <ul class="list-group  list-group-flush">
