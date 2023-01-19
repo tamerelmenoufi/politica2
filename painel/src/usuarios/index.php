@@ -6,8 +6,8 @@
       mysqli_query($con, $query);
     }
 
-    if($_POST['situacao']){
-      $query = "update usuarios set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'";
+    if($_POST['status']){
+      $query = "update usuarios set status = '{$_POST['opc']}' where codigo = '{$_POST['status']}'";
       mysqli_query($con, $query);
       exit();
     }
@@ -65,7 +65,7 @@
                   <td>
 
                   <div class="form-check form-switch">
-                    <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
+                    <input class="form-check-input status" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->status)?'checked':false)?> usuario="<?=$d->codigo?>">
                   </div>
 
                   </td>
@@ -161,9 +161,9 @@
         })
 
 
-        $(".situacao").change(function(){
+        $(".status").change(function(){
 
-            situacao = $(this).attr("usuario");
+            status = $(this).attr("usuario");
             opc = false;
 
             if($(this).prop("checked") == true){
@@ -177,7 +177,7 @@
                 url:"src/usuarios/index.php",
                 type:"POST",
                 data:{
-                    situacao,
+                    status,
                     opc
                 },
                 success:function(dados){
