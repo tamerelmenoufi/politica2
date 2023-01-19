@@ -218,7 +218,7 @@
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
                     // $.alert(dados.sucesso);
-                    console.log(dados.PoliticaPainel);
+                    console.log(dados);
                     if(dados.PoliticaPainel > 0){
                         window.location.href='./';
                     }else{
