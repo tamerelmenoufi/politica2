@@ -1,5 +1,5 @@
 <?php
-        include("{$_SERVER['DOCUMENT_ROOT']}/portal/painel/lib/includes.php");
+        include("{$_SERVER['DOCUMENT_ROOT']}/politica/painel/lib/includes.php");
 
 
     if($_POST['acao'] == 'salvar'){

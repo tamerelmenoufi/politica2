@@ -1,5 +1,5 @@
 <?php
-        include("{$_SERVER['DOCUMENT_ROOT']}/portal/painel/lib/includes.php");
+        include("{$_SERVER['DOCUMENT_ROOT']}/politica/painel/lib/includes.php");
 
     if($_POST['delete']){
       $query = "delete from usuarios where codigo = '{$_POST['delete']}'";
@@ -21,7 +21,7 @@
 </style>
 <div class="col">
   <div class="m-3">
-    
+
 
     <div class="row">
       <div class="col">
