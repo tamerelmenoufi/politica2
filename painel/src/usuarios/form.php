@@ -74,7 +74,7 @@
                     <label for="email">E-mail</label>
                 </div>
                 <?php
-                if($d->codigo != 1 and $_SESSION['ProjectPainel']->perfil == 'adm'){
+                if($d->codigo != 1 and $_SESSION['PoliticaPainel']->perfil == 'adm'){
                 ?>
                 <div class="form-floating mb-3">
                     <select name="perfil" class="form-control" id="perfil">
@@ -97,7 +97,7 @@
                     <label for="senha">Senha</label>
                 </div>
                 <?php
-                if($d->codigo != 1 and $_SESSION['ProjectPainel']->perfil == 'adm' ){
+                if($d->codigo != 1 and $_SESSION['PoliticaPainel']->perfil == 'adm' ){
                 ?>
 
                 <div class="form-floating mb-3">

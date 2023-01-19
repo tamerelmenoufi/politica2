@@ -7,7 +7,7 @@
         exit();
     }
 
-    if($_SESSION['ProjectPainel']){
+    if($_SESSION['PoliticaPainel']){
         $url = "src/home/index.php";
     }else{
         $url = "src/login/index.php";

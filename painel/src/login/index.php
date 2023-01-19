@@ -5,22 +5,22 @@
         $login = $_POST['login'];
         $senha = md5($_POST['senha']);
 
-        $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
+        $query = "select * from usuarios where usuario = '{$login}' and senha = '{$senha}'";
         $result = mysqli_query($con, $query);
 
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
-            $_SESSION['ProjectPainel'] = $d;
+            $_SESSION['PoliticaPainel'] = $d;
             $retorno = [
                 'sucesso' => true,
-                'ProjectPainel' => $d->codigo,
+                'PoliticaPainel' => $d->codigo,
                 'MaterConnectado' => $_POST['MaterConnectado'],
                 'msg' => 'Login Realizado com sucesso',
             ];
         }else{
             $retorno = [
                 'sucesso' => false,
-                'ProjectPainel' => false,
+                'PoliticaPainel' => false,
                 'MaterConnectado' => false,
                 'msg' => 'Ocorreu um erro no seu login',
             ];
@@ -218,8 +218,8 @@
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
                     // $.alert(dados.sucesso);
-                    console.log(dados.ProjectPainel);
-                    if(dados.ProjectPainel > 0){
+                    console.log(dados.PoliticaPainel);
+                    if(dados.PoliticaPainel > 0){
                         window.location.href='./';
                     }else{
                         $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
