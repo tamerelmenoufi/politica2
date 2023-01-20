@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
     exit;
 }
 
-echo $query = "SELECT b.*, m.municipio AS municipio FROM beneficiados b "
+$query = "SELECT b.*, m.municipio AS municipio FROM beneficiados b "
     . "LEFT JOIN municipios m ON m.codigo = b.municipio "
     . "WHERE b.deletado = '0' "
     . "ORDER BY codigo desc limit 100";
@@ -60,24 +60,24 @@ $result = mysqli_query($con, $query);
 
 <script>
     $(function(){ Carregando('none');
-        dataTable = $('#datatable').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "order": [],
-            "retrieve": true,
-            "paging": true,
-            "stateSave": true,
-            "ajax": {
-                url: "<?= $urlBeneficiados; ?>/fetch.php",
-                method: "POST",
-            },
-            "columnDefs": [
-                {
-                    "targets": 3,
-                    "orderable": false,
-                },
-            ],
-        });
+        // dataTable = $('#datatable').DataTable({
+        //     "processing": true,
+        //     "serverSide": true,
+        //     "order": [],
+        //     "retrieve": true,
+        //     "paging": true,
+        //     "stateSave": true,
+        //     "ajax": {
+        //         url: "<?= $urlBeneficiados; ?>/fetch.php",
+        //         method: "POST",
+        //     },
+        //     "columnDefs": [
+        //         {
+        //             "targets": 3,
+        //             "orderable": false,
+        //         },
+        //     ],
+        // });
 
         $("#datatable").on("click", "tbody tr td .btn-excluir", function () {
             var codigo = $(this).data('codigo');
