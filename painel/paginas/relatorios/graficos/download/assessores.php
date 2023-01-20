@@ -12,7 +12,7 @@
 
     #$query = "select b.tipo, count(*) as qt from servicos a left join servico_tipo b on a.tipo = b.codigo group by a.tipo";
     $result = mysqli_query($con, $query);
-    $n = mysql_num_rows($result);
+    $n = mysqli_num_rows($result);
 
     $i=0;
     while($d = mysqli_fetch_object($result)){

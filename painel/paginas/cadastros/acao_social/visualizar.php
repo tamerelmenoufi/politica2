@@ -102,7 +102,7 @@ $d = mysqli_fetch_object($result);
 
                 $servicosDescricao = [];
 
-                if (mysql_num_rows($resultServicos)):
+                if (mysqli_num_rows($resultServicos)):
                     while ($dadosServicos = mysqli_fetch_object($resultServicos)):
                         $servicosDescricao[] = $dadosServicos->tipo;
                     endwhile;

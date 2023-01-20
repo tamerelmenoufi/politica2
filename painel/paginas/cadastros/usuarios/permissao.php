@@ -115,7 +115,7 @@ $usuario_permissao = explode(',', $d->permissoes);
                 $queryVinc = "SELECT * FROM permissoes WHERE vinculo = '{$dadosPerm->codigo}'";
                 $resultVinc = mysqli_query($con, $queryVinc);
 
-                if (!mysql_num_rows($resultVinc)) {
+                if (!mysqli_num_rows($resultVinc)) {
                     $permissao[] = $dadosPerm->descricao;
                 }
 

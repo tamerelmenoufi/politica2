@@ -4,7 +4,7 @@ include_once "config_permissoes.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
     $codigo = $_POST['codigo'];
 
-    $existeRegistro = mysql_num_rows(mysqli_query($con, "SELECT * FROM permissoes WHERE vinculo = '{$codigo}'"));
+    $existeRegistro = mysqli_num_rows(mysqli_query($con, "SELECT * FROM permissoes WHERE vinculo = '{$codigo}'"));
 
     if ($existeRegistro) {
         echo json_encode(['status' => false, 'msg' => 'Não é possivel excluir, pois existe registro vinculados']);

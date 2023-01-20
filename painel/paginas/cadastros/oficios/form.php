@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // if(!$codigo){
     //     $q = "select * from oficios_sequecia where ano = year(NOW())";
     //     $r = mysqli_query($con, $q);
-    //     if(mysql_num_rows($r)){
+    //     if(mysqli_num_rows($r)){
     //         $d = mysqli_fetch_object($r);
     //         $n = $d->numero;
     //         mysqli_query($con, "update oficios_sequecia set numero = (numero + 1) where codigo = '{$d->codigo}'");

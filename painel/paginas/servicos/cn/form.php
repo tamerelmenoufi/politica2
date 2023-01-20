@@ -124,7 +124,7 @@ if ($codigo) {
             <?php
                 $query = "SELECT * FROM especialidades where servico_tipo = '1' ORDER BY descricao";
                 $result = mysqli_query($con, $query);
-                if(mysql_num_rows($result)){
+                if(mysqli_num_rows($result)){
             ?>
 
             <div class="form-group">

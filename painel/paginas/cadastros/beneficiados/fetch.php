@@ -33,7 +33,7 @@ if ($_POST['length'] != -1) $query1 = 'LIMIT ' . $_POST['start'] . ', ' . $_POST
 
 $result = mysqli_query($con, $query);
 
-$number_filter_row = mysql_num_rows($result);
+$number_filter_row = mysqli_num_rows($result);
 
 $result1 = mysqli_query($con, $query . $query1);
 
