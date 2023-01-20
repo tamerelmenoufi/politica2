@@ -82,6 +82,6 @@ function count_all_data()
 {
     $query = "SELECT COUNT(codigo) FROM beneficiados WHERE deletado != '1'";
     $result = mysqli_query($con, $query);
-    list($qtd) = mysql_fetch_row($result);
+    list($qtd) = mysqli_fetch_row($result);
     return $qtd;
 }

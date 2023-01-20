@@ -6,7 +6,7 @@ $urlServicos = 'paginas/servicos/saude';
 $_SESSION['categoria'] = (($_GET['categoria']) ?: $_SESSION['categoria']);
 
 $categoria = (($_GET['categoria']) ?: $_SESSION['categoria']);
-list($cat_cod, $cat_desc) = mysql_fetch_row(mysqli_query($con, "select codigo, descricao from categorias where codigo = '{$categoria}'"));
+list($cat_cod, $cat_desc) = mysqli_fetch_row(mysqli_query($con, "select codigo, descricao from categorias where codigo = '{$categoria}'"));
 
 function getEsfera()
 {
