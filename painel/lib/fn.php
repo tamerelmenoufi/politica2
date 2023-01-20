@@ -275,3 +275,14 @@ if ($_SESSION['usuario']) {
         $ConfPermissoes[trim($ConfP[$i])] = trim($ConfP[$i]);
     }
 }
+
+
+function CampoBusca(){
+?>
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Busca</span>
+    <input type="text" id="CampoBusca" class="form-control" aria-label="Digite o texto para a busca" aria-describedby="inputGroup-sizing-default">
+    <button class="btn btn-outline-secondary" type="button" id="butaoCampoBusca">Buscar</button>
+    </div>
+<?php
+}

@@ -72,7 +72,8 @@ $_SESSION['saude_xls'] = false;
                             <div class="col-md-3">
                                 <div class="form-group mb-2">
 
-                                    <select
+                                    <?php CampoBusca(); ?>
+                                        <select
                                             id="filtro-situacao"
                                             class="form-control filtro-situacao"
                                             title="Situação"
