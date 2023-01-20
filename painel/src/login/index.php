@@ -11,7 +11,7 @@
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
             $_SESSION['PoliticaPainel'] = $d;
-            $_SESSION['usuario'] = mysql_fetch_array($result);
+            $_SESSION['usuario'] = mysqli_fetch_array($result);
             $retorno = [
                 'sucesso' => true,
                 'PoliticaPainel' => $d->codigo,
