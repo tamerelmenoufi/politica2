@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
 $query = "SELECT b.*, m.municipio AS municipio FROM beneficiados b "
     . "LEFT JOIN municipios m ON m.codigo = b.municipio "
     . "WHERE b.deletado = '0' "
-    . "ORDER BY codigo desc";
+    . "ORDER BY codigo desc limit 100";
 $result = mysqli_query($con, $query);
 
 ?>
