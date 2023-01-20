@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
 
 $codigo = $_GET['codigo'];
 
-$query = "SELECT p1.*, p2.descricao AS vinculo FROM permissoes p1 "
+echo $query = "SELECT p1.*, p2.descricao AS vinculo FROM permissoes p1 "
     . "LEFT JOIN permissoes p2 ON p1.vinculo = p2.codigo "
     . "WHERE p1.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
