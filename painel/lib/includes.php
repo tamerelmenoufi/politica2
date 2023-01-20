@@ -5,6 +5,8 @@
     include("/appinc/connect.php");
     $con = AppConnect('politica');
 
+    $_SESSION = [];
+
     // include("/appinc/connect.php");
     include("fn.php");
 
