@@ -101,26 +101,31 @@
         <?php
         }
         ?>
+
+
+        <h6 class="collapse-header">Saúde</h6>
+        <?php
+        if(in_array('Saúde - Visualizar', $ConfPermissoes)){
+        $q = "select * from categorias where deletado = '0' order by descricao";
+        $r = mysqli_query($con, $q);
+        while($c = mysqli_fetch_object($r)){
+        ?>
+        <p>
+        <a url="paginas/servicos/saude/index.php?categoria=<?=$c->codigo?>" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-chart-line"></i> <?=$c->descricao?>
+        </a>
+        </p>
+        <?php
+        }
+        }
+        ?>
+
+
       </div>
     </div>
 
 
-    <h6 class="collapse-header">Saúde</h6>
-    <?php
-    if(in_array('Saúde - Visualizar', $ConfPermissoes)){
-    $q = "select * from categorias where deletado = '0' order by descricao";
-    $r = mysqli_query($con, $q);
-    while($c = mysqli_fetch_object($r)){
-    ?>
-    <p>
-    <a url="paginas/servicos/saude/index.php?categoria=<?=$c->codigo?>" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-      <i class="fa-solid fa-chart-line"></i> <?=$c->descricao?>
-    </a>
-    </p>
-    <?php
-    }
-    }
-    ?>
+
 
 
     <div class="row mb-1 menu-cinza">
