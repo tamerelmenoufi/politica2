@@ -66,7 +66,7 @@ $_SESSION['saude_xls'] = false;
             <table id="datatable" class="table" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th colspan="5">
+                    <th colspan="6">
                         <div class="row d-md-flex flex-row align-items-center">
                             <?php CampoBusca(); ?>
                         </div>
