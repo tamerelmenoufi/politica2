@@ -34,6 +34,7 @@ function UpdateQuery($query){
 }
 
 function ListaLogs($tabela, $registro){
+    global $con;
     $Query = [];
     $query = "select a.*, b.nome from sis_logs a left join usuarios b on a.usuario=b.codigo where a.tabela = '{$tabela}' and a.registro = '{$registro}' order by a.codigo asc";
     $result = mysqli_query($con, $query);
@@ -58,6 +59,7 @@ function ListaLogs($tabela, $registro){
 
 function sis_logs($tabela, $codigo, $query, $operacao = null)
 {
+    global $con;
     $usuario = $_SESSION['usuario']['codigo'];
     $operacao = $operacao ?: strtoupper(trim(explode(' ', $query)[0]));
     $query = Addslashes($query);
@@ -72,6 +74,7 @@ function sis_logs($tabela, $codigo, $query, $operacao = null)
 
 function exclusao($tabela, $codigo, $fisica = false)
 {
+    global $con;
     if ($fisica) {
         $query = "DELETE FROM {$tabela} WHERE codigo = '{$codigo}'";
     } else {
