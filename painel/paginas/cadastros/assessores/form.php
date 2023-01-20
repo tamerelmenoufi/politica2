@@ -246,14 +246,14 @@ if ($codigo) {
 
         $('#telefone').mask('(99) 9 9999-9999');
 
-        $('#municipio').selectpicker();
+        // $('#municipio').selectpicker();
 
-        $('#form-assessores').validate();
+        // $('#form-assessores').validate();
 
         $('#form-assessores').submit(function (e) {
             e.preventDefault();
 
-            if (!$(this).valid()) return false;
+            // if (!$(this).valid()) return false;
 
             var codigo = $('#codigo').val();
             var dados = $(this).serializeArray();
