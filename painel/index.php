@@ -71,7 +71,6 @@ td{
                     acao:'CampoBusca',
                 },
                 success:function(dados){
-                    $.alert('ok')
                     $("#paginaHome").html(dados);
                 }
             });

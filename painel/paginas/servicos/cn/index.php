@@ -5,7 +5,7 @@ if($_POST['acao'] == 'CampoBusca'){
 
     $_SESSION['CampoBusca'] = $_POST['busca'];
 
-    $_SESSION['query_busca'] = " AND (
+    echo $_SESSION['query_busca'] = " AND (
         b.nome like '%{$_SESSION['CampoBusca']}%' or
         a.nome like '%{$_SESSION['CampoBusca']}%' or
         atendimento like '%{$_SESSION['CampoBusca']}%' or
