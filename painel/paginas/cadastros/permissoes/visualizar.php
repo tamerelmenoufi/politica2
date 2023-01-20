@@ -174,6 +174,8 @@ $d = mysqli_fetch_object($result);
 function itens($codigo)
 {
     global $urlPermissoes;
+    global $con;
+
     ?>
     <table class="table">
         <thead>
@@ -184,7 +186,7 @@ function itens($codigo)
         </thead>
         <tbody>
         <?php
-        echo $queryItem = "SELECT * FROM permissoes WHERE vinculo = '{$codigo}'";
+        $queryItem = "SELECT * FROM permissoes WHERE vinculo = '{$codigo}'";
         $resultItem = mysqli_query($con, $queryItem);
 
         while ($dItem = mysqli_fetch_object($resultItem)): ?>
