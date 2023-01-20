@@ -31,7 +31,9 @@ body {
     background:#16999a;
 
 }
-
+td{
+    white-space nowrap;
+}
 </style>
 
   <body>
