@@ -53,19 +53,7 @@ if ($codigo) {
 
 ?>
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb shadow bg-gray-custom">
-        <li class="breadcrumb-item"><a href="#" url="content.php">Início</a></li>
-        <li class="breadcrumb-item" aria-current="page">
-            <a href="#" url="<?= $servicoTipo; ?>/index.php">Tipo de Serviço</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-            <?= $codigo ? 'Alterar' : 'Cadastrar'; ?>
-        </li>
-    </ol>
-</nav>
-
-<div class="card shadow mb-4">
+<div class="card shadow m-3">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">
             <?= $codigo ? 'Alterar' : 'Cadastrar'; ?> Tipo de Serviço

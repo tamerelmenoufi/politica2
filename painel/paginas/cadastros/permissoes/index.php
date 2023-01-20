@@ -24,15 +24,7 @@ $result = mysqli_query($con, $query);
 
 ?>
 
-<!--<h1 class="h3 mb-2 text-gray-800">Secretarias</h1>-->
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb shadow bg-gray-custom">
-        <li class="breadcrumb-item"><a href="#" url="content.php">Início</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Permissões</li>
-    </ol>
-</nav>
-
-<div class="card shadow mb-4">
+<div class="card shadow m-3">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">
             Permissões

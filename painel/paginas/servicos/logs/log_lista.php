@@ -13,7 +13,7 @@ if ($codigo) {
         right:35px;
     }
 </style>
-<div class="card shadow mb-4" style="margin:20px;">
+<div class="card shadow m-3" style="margin:20px;">
     <div class="card-body">
         <table class="table table-hover">
             <thead>

@@ -49,7 +49,7 @@ $usuario_permissao = explode(',', $d->permissoes);
     </ol>
 </nav>
 
-<div class="card shadow mb-4">
+<div class="card shadow m-3">
     <div class="card-header py-3 d-flex flex-md-row flex-column align-items-center justify-content-md-between">
         <h6 class="m-0 font-weight-bold text-primary">
             Permissão
