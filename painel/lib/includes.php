@@ -12,4 +12,12 @@
 
     $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/painel/";
 
-    $ConfPermissoes = [];
+    $ConfPermissoes = [
+        'Certidão de Nascimento - Visualizar',
+        'Registro Geral - Visualizar',
+        'CRAS - Visualizar',
+        'CR - Visualizar',
+        'Psicologia - Visualizar',
+        'Odontologia - Visualizar',
+        'Jurídico - Visualizar',
+    ];
