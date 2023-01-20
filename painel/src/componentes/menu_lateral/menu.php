@@ -323,7 +323,8 @@
 
 <script>
   $(function(){ Carregando('none');
-    $("a[url]").click(function(){
+    // $("a[url]").click(function(){
+    $(document).on('click', '[url]', function (e) {
       Carregando();
       url = $(this).attr("url");
       $.ajax({
