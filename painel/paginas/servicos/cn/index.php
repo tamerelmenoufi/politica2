@@ -45,7 +45,7 @@ $query = "SELECT s.*, a.nome AS assessor, b.nome AS beneficiado FROM servicos s 
     . "ELSE 'Aguardando' "
     . "END) AS atendimento, lf.descricao AS lf_descricao ";
 
-echo $query = "SELECT s.*, a.nome AS assessor, b.nome AS beneficiado, t.descricao as especialidade, {$colunaAtendimento} FROM servicos s "
+$query = "SELECT s.*, a.nome AS assessor, b.nome AS beneficiado, t.descricao as especialidade, {$colunaAtendimento} FROM servicos s "
     . "LEFT JOIN assessores a ON a.codigo = s.assessor "
     . "LEFT JOIN beneficiados b ON b.codigo = s.beneficiado "
     . "LEFT JOIN especialidades t ON t.codigo = s.especialidade "

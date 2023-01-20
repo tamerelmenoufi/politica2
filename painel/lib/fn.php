@@ -278,10 +278,11 @@ if ($_SESSION['usuario']) {
 
 
 function CampoBusca($l){
+    global $_SESSION;
 ?>
     <div class="input-group mb-3">
     <span class="input-group-text" id="inputGroup-sizing-default">Filtro</span>
-    <input type="text" id="CampoBusca" class="form-control" aria-label="Digite o texto para a busca" aria-describedby="inputGroup-sizing-default">
+    <input type="text" id="CampoBusca" value="<?=$_SESSION['CampoBusca']?>" class="form-control" aria-label="Digite o texto para a busca" aria-describedby="inputGroup-sizing-default">
     <button class="btn btn-outline-secondary" local="<?=$l?>" type="button" id="botaoCampoBusca">Buscar</button>
     </div>
 <?php
