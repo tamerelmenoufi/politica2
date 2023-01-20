@@ -50,7 +50,7 @@ $query = "SELECT s.*, a.nome AS assessor, b.nome AS beneficiado, t.descricao as 
     . "LEFT JOIN beneficiados b ON b.codigo = s.beneficiado "
     . "LEFT JOIN especialidades t ON t.codigo = s.especialidade "
     . "LEFT JOIN local_fontes lf ON lf.codigo = s.local_fonte "
-    . "WHERE s.tipo = '4' AND s.deletado = '0'"
+    . "WHERE s.tipo = '4' AND s.deletado = '0' ".(($_SESSION['query_busca'])?:false)
     . "ORDER BY s.codigo DESC";
 
 $result = mysqli_query($con, $query);
