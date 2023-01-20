@@ -1,4 +1,5 @@
 <?php
+
 include "config_beneficiados.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
     exit;
 }
 
-$query = "SELECT b.*, m.municipio AS municipio FROM beneficiados b "
+echo $query = "SELECT b.*, m.municipio AS municipio FROM beneficiados b "
     . "LEFT JOIN municipios m ON m.codigo = b.municipio "
     . "WHERE b.deletado = '0' "
     . "ORDER BY codigo desc limit 100";
