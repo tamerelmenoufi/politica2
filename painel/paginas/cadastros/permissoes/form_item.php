@@ -30,7 +30,7 @@ $vinculo = $_GET['vinculo'];
         <label for="tipo">Descrição <i class="text-danger">*</i></label>
         <input
                 type="text"
-                class="form-control"
+                class="form-control mb-1"
                 id="descricao"
                 name="descricao"
                 value="<?= '' ?>"

@@ -66,7 +66,7 @@ if ($codigo) {
                 <label for="tipo">Descrição <i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control"
+                        class="form-control mb-1"
                         id="descricao"
                         name="descricao"
                         value="<?= $d->descricao; ?>"
@@ -78,7 +78,7 @@ if ($codigo) {
             <div class="form-group">
                 <label for="vinculo">Vínculo</label>
                 <select
-                        class="form-control"
+                        class="form-control mb-1"
                         id="vinculo"
                         name="vinculo"
                 >

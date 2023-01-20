@@ -67,7 +67,7 @@ if ($codigo) {
                     Tipo de Serviço <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control"
+                        class="form-control mb-1"
                         id="servico_tipo"
                         name="servico_tipo"
                         data-live-search="true"
@@ -94,7 +94,7 @@ if ($codigo) {
                     Categoria <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control"
+                        class="form-control mb-1"
                         id="categoria"
                         name="categoria"
                         data-live-search="true"
@@ -120,7 +120,7 @@ if ($codigo) {
                 <label for="descricao">Descrição<i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control"
+                        class="form-control mb-1"
                         id="descricao"
                         name="descricao"
                         maxlength="255"
@@ -133,7 +133,7 @@ if ($codigo) {
                 <label for="senha">Chave de Acesso<i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control"
+                        class="form-control mb-1"
                         id="senha"
                         name="senha"
                         maxlength="255"

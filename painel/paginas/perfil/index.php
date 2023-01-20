@@ -81,7 +81,7 @@ $d = mysqli_fetch_object(mysqli_query($con, $query));
                                 <label for="nome">Nome <i class="text-danger">*</i></label>
                                 <input
                                         type="text"
-                                        class="form-control"
+                                        class="form-control mb-1"
                                         id="nome"
                                         name="nome"
                                         value="<?= $d->nome; ?>"
@@ -93,7 +93,7 @@ $d = mysqli_fetch_object(mysqli_query($con, $query));
                                 <label for="nome">Usuário <i class="text-danger">*</i></label>
                                 <input
                                         type="text"
-                                        class="form-control"
+                                        class="form-control mb-1"
                                         id="usuario"
                                         name="usuario"
                                         value="<?= $d->usuario; ?>"
@@ -107,7 +107,7 @@ $d = mysqli_fetch_object(mysqli_query($con, $query));
                                         <label for="senha">Senha <i class="text-danger">*</i></label>
                                         <input
                                                 type="password"
-                                                class="form-control"
+                                                class="form-control mb-1"
                                                 id="senha"
                                                 name="senha"
                                         >
@@ -119,7 +119,7 @@ $d = mysqli_fetch_object(mysqli_query($con, $query));
                                                     class="text-danger">*</i></label>
                                         <input
                                                 type="password"
-                                                class="form-control"
+                                                class="form-control mb-1"
                                                 id="senha_2"
                                                 name="senha_2"
                                         >
