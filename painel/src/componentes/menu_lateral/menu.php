@@ -210,7 +210,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/fontes_locais/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i>Fontes Locais
+          <i class="fa-solid fa-chart-line"></i> Fontes Locais
         </a>
         </p>
         <?php
@@ -219,7 +219,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/municipios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i>Municípios
+          <i class="fa-solid fa-chart-line"></i> Municípios
         </a>
         </p>
         <?php
@@ -228,7 +228,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/bairros/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line">Bairros</i>
+          <i class="fa-solid fa-chart-line"></i> Bairros
         </a>
         </p>
         <?php
@@ -238,7 +238,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/secretarias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i>Secretarias
+          <i class="fa-solid fa-chart-line"></i> Secretarias
         </a>
         </p>
         <?php
@@ -247,7 +247,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/tipo_servico/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i>Tipo de Serviço
+          <i class="fa-solid fa-chart-line"></i> Tipo de Serviço
         </a>
         </p>
         <?php
@@ -257,7 +257,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/acao_social_tipo/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i>Tipo Ação Social
+          <i class="fa-solid fa-chart-line"></i> Tipo Ação Social
         </a>
         </p>
         <?php
@@ -267,7 +267,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/categorias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i>Categorias de Serviço
+          <i class="fa-solid fa-chart-line"></i> Categorias de Serviço
         </a>
         </p>
         <?php
@@ -276,7 +276,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/especialidades/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i>Especialidades
+          <i class="fa-solid fa-chart-line"></i> Especialidades
         </a>
         </p>
         <?php
