@@ -1,6 +1,26 @@
 <?php
 include_once "config_servicos.php";
 
+
+if($_POST['acao'] == 'CampoBusca'){
+
+    $_SESSION['CampoBusca'] = $_POST['busca'];
+
+    $_SESSION['query_busca'] = " AND (
+        b.nome like '%{$_SESSION['CampoBusca']}%' or
+        a.nome like '%{$_SESSION['CampoBusca']}%' or
+        s.situacao like '%{$_SESSION['CampoBusca']}%' or
+        (CASE WHEN s.data_agenda <= NOW() AND s.situacao = 'concluido' AND s.data_agenda > 0 THEN 'Atendido' "
+    . "WHEN s.data_agenda < NOW() AND s.situacao != 'concluido' AND s.data_agenda > 0 THEN 'Não atendido' "
+    . "WHEN s.data_agenda > NOW() AND s.data_agenda > 0 THEN 'agendado' "
+    . "ELSE 'Aguardando' "
+    . "END) like '%{$_SESSION['CampoBusca']}%' or
+        lf.descricao like '%{$_SESSION['CampoBusca']}%' or
+        local_responsavel like '%{$_SESSION['CampoBusca']}%'
+        )
+    ";
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
     $codigo = $_POST['codigo'];
 

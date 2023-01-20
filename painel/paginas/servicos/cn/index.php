@@ -18,8 +18,6 @@ if($_POST['acao'] == 'CampoBusca'){
         local_responsavel like '%{$_SESSION['CampoBusca']}%'
         )
     ";
-
-
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
