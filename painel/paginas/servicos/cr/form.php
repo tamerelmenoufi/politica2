@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     unset($data['codigo']);
 
     foreach ($data as $name => $value) {
-        $attr[] = "{$name} = '" . mysqli_real_escape_string($value) . "'";
+        $attr[] = "{$name} = '" . Addslashes($value) . "'";
     }
 
     $attr = implode(', ', $attr);
