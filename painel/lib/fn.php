@@ -22,7 +22,7 @@ date_default_timezone_set('America/Manaus');
 
 if ($_SESSION['usuario']) {
 
-    echo $query = "SELECT * FROM usuarios WHERE codigo = '{$_SESSION['usuario']['codigo']}'";
+    $query = "SELECT * FROM usuarios WHERE codigo = '{$_SESSION['usuario']['codigo']}'";
     $result = mysqli_query($con, $query);
     $_SESSION['usuario'] = mysqli_fetch_array($result);
 
