@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$codigo) $data['data_cadastro'] = 'NOW()';
 
     foreach ($data as $name => $value) {
-        $attr[] = "{$name} = '" . mysql_real_escape_string($value) . "'";
+        $attr[] = "{$name} = '" . mysqli_real_escape_string($value) . "'";
     }
 
     $attr = implode(', ', $attr);

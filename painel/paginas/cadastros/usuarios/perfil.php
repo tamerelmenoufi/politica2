@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($name == 'senha') {
             $attr[] = "{$name} = '" . md5($value) . "'";
         } else {
-            $attr[] = "{$name} = '" . mysql_real_escape_string($value) . "'";
+            $attr[] = "{$name} = '" . mysqli_real_escape_string($value) . "'";
         }
     }
 
