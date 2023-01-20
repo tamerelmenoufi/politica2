@@ -18,7 +18,7 @@
         });
     }
 
-    $(function(){
+    $(function(){ Carregando('none');
         pags = [
             ['src/componentes/menu_topo/menu.php','paginaHomeTopo'],
             ['src/componentes/menu_lateral/menu.php','paginaHomeLateral'],

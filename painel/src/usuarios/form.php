@@ -140,7 +140,7 @@
     </form>
 
     <script>
-        $(function(){
+        $(function(){ Carregando('none');
             Carregando('none');
 
             $("#cpf").mask("999.999.999-99");

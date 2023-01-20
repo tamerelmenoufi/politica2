@@ -3,7 +3,7 @@
 
 ?>
 <script>
-    $(function(){
+    $(function(){ Carregando('none');
 
         Carregando('none');
 

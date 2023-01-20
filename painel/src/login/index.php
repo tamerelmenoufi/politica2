@@ -202,7 +202,7 @@
 </div>
 
 <script>
-    $(function(){
+    $(function(){ Carregando('none');
         Carregando('none');
         AcaoBotao = ()=>{
             login = $("#login").val();

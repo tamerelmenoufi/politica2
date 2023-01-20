@@ -108,7 +108,7 @@
 
 
 <script>
-    $(function(){
+    $(function(){ Carregando('none');
         Carregando('none');
         $("button[novoCadastro]").click(function(){
             $.ajax({

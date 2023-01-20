@@ -322,7 +322,7 @@
 </div>
 
 <script>
-  $(function(){
+  $(function(){ Carregando('none');
     $("a[url]").click(function(){
       Carregando();
       url = $(this).attr("url");

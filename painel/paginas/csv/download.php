@@ -3,7 +3,7 @@
 </button>
 
 <script>
-    $(function(){
+    $(function(){ Carregando('none');
         $("button[xls]").click(function(){
             busca = $('input[type="search"]').val();
             window.open('paginas/csv/csv.php?busca='+busca);

@@ -26,7 +26,7 @@
         });
     }
 
-    $(function(){
+    $(function(){ Carregando('none');
         $("div[graficos]").each(function(){
             obj = $(this);
             opc = $(this).attr("opc");

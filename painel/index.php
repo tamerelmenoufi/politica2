@@ -47,7 +47,7 @@ body {
     ?>
 
     <script>
-        $(function(){
+        $(function(){ Carregando('none');
             Carregando();
             $.ajax({
                 url:"<?=$url?>",
