@@ -292,7 +292,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     let retorno = JSON.parse(response);
 
                     if (retorno.status) {
-                        tata.success('Sucesso', retorno.msg);
+                        $.alert(retorno.msg);
 
                         $("#beneficiado").append('<option value="'+retorno.codigo+'">'+retorno.nome+'</option>');
                         $("#beneficiado").selectpicker('refresh');
@@ -310,7 +310,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // })
 
                     } else {
-                        tata.error('Error', retorno.msg);
+                        $.alert(retorno.msg);
                     }
                 }
             })

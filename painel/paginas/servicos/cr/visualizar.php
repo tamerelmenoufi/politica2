@@ -144,7 +144,7 @@ Carregando('none');
                                 let retorno = JSON.parse(response);
 
                                 if (retorno.status) {
-                                    tata.success('Sucesso', retorno.msg);
+                                    $.alert(retorno.msg);
 
                                     $.ajax({
                                         url: '<?= $urlServicos; ?>/index.php',
@@ -153,7 +153,7 @@ Carregando('none');
                                         }
                                     });
                                 } else {
-                                    tata.error('Error', retorno.msg);
+                                    $.alert(retorno.msg);
                                 }
                             }
                         })

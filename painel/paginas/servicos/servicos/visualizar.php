@@ -111,7 +111,7 @@ $d = mysqli_fetch_object($result);
                                 let retorno = JSON.parse(response);
 
                                 if (retorno.status) {
-                                    tata.success('Sucesso', retorno.msg);
+                                    $.alert(retorno.msg);
 
                                     $.ajax({
                                         url: '<?= $urlServicos; ?>/index.php',
@@ -120,7 +120,7 @@ $d = mysqli_fetch_object($result);
                                         }
                                     });
                                 } else {
-                                    tata.error('Error', retorno.msg);
+                                    $.alert(retorno.msg);
                                 }
                             }
                         })

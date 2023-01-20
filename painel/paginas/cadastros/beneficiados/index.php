@@ -136,11 +136,11 @@ $result = mysqli_query($con, $query);
                                     let retorno = JSON.parse(response);
 
                                     if (retorno.status) {
-                                        tata.success('Sucesso', retorno.msg);
+                                        $.alert(retorno.msg);
                                         //$(`#linha-${codigo}`).remove();
                                         $(this).parent().parent().remove();
                                     } else {
-                                        tata.error('Error', retorno.msg);
+                                        $.alert(retorno.msg);
                                     }
 
                                 }

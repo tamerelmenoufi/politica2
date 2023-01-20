@@ -269,7 +269,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     let retorno = JSON.parse(response);
 
                     if (retorno.status) {
-                        tata.success('Sucesso', retorno.msg);
+                        $.alert(retorno.msg);
 
 
                         $("#assessor").append('<option value="'+retorno.codigo+'">'+retorno.nome+'</option>');
@@ -281,7 +281,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $("div[NovoAssessor]").html('');
 
                     } else {
-                        tata.error('Error', retorno.msg);
+                        $.alert(retorno.msg);
                     }
                 }
             })

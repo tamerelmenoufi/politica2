@@ -182,12 +182,12 @@ if ($codigo) {
                     let retorno = JSON.parse(response);
 
                     if (retorno.status) {
-                        tata.success('Sucesso', retorno.msg);
+                        $.alert(retorno.msg);
 
                         window.location.href='index.php';
 
                     } else {
-                        tata.error('Error', retorno.msg);
+                        $.alert(retorno.msg);
                     }
                 }
             })

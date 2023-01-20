@@ -213,9 +213,9 @@ $_SESSION['saude_xls'] = true;
                                     let retorno = JSON.parse(response);
 
                                     if (retorno.status) {
-                                        tata.success('Sucesso', retorno.msg);
+                                        $.alert(retorno.msg);
                                     } else {
-                                        tata.error('Error', retorno.msg);
+                                        $.alert(retorno.msg);
                                     }
 
                                     $(`#linha-${codigo}`).remove();

@@ -176,9 +176,9 @@ $usuario_permissao = explode(',', $d->permissoes);
                     let retorno = JSON.parse(response);
 
                     if (retorno.status) {
-                        tata.success('Sucesso', retorno.msg);
+                        $.alert(retorno.msg);
                     } else {
-                        tata.error('Error', retorno.msg);
+                        $.alert(retorno.msg);
                     }
                 }
             });

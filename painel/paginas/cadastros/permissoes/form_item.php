@@ -77,10 +77,10 @@ $vinculo = $_GET['vinculo'];
                             }
                         });
 
-                        tata.success('Sucesso', retorno.msg);
+                        $.alert(retorno.msg);
                         dialogItem.close();
                     } else {
-                        tata.error('Error', retorno.msg);
+                        $.alert(retorno.msg);
                     }
                 }
             })
