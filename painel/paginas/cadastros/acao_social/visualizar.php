@@ -111,7 +111,7 @@ $d = mysqli_fetch_object($result);
 </div>
 
 <script>
-
+    Carregando('none');
     $(".btn-logs").click(function(){
         $.dialog({
             content:"url:<?= $acaoSocial;?>/log_lista.php?codigo=<?=$codigo?>",

@@ -14,18 +14,6 @@ $d = mysqli_fetch_object($result);
 
 ?>
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb shadow bg-gray-custom">
-        <li class="breadcrumb-item"><a href="#" url="content.php">Início</a></li>
-        <li class="breadcrumb-item" aria-current="page">
-            <a href="#" url="<?= $urlServicos; ?>/index.php">Serviços</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-            Visualizar
-        </li>
-    </ol>
-</nav>
-
 <div class="card shadow m-3">
     <div class="card-header py-3 d-flex flex-md-row flex-column align-items-center justify-content-md-between">
         <h6 class="m-0 font-weight-bold text-primary">
@@ -123,7 +111,7 @@ $d = mysqli_fetch_object($result);
 </div>
 
 <script>
-
+Carregando('none');
     $(".btn-logs").click(function(){
         $.dialog({
             content:"url:paginas/servicos/logs/log_lista.php?codigo=<?=$codigo?>",

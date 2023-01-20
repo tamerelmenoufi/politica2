@@ -114,6 +114,7 @@ $d = mysqli_fetch_object($result);
     </div>
 
     <script>
+        Carregando('none');
         $('.btn-excluir').click(function () {
             var codigo = $(this).data('codigo');
 

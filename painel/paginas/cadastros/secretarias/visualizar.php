@@ -8,18 +8,6 @@ $d = mysqli_fetch_object($result);
 
 ?>
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb shadow bg-gray-custom">
-        <li class="breadcrumb-item"><a href="#" url="content.php">Início</a></li>
-        <li class="breadcrumb-item" aria-current="page">
-            <a href="#" url="<?= $urlSecretarias; ?>/index.php">Secretarias</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-            Visualizar
-        </li>
-    </ol>
-</nav>
-
 <div class="card shadow m-3">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">
@@ -78,6 +66,7 @@ $d = mysqli_fetch_object($result);
 </div>
 
 <script>
+    Carregando('none');
     $('.btn-excluir').click(function () {
         var codigo = $(this).data('codigo');
 
