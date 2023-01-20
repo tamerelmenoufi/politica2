@@ -1,4 +1,6 @@
 <?php
+
+
 include "config_beneficiados.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

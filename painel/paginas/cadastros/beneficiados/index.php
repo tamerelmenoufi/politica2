@@ -45,12 +45,45 @@ $result = mysqli_query($con, $query);
                 <tr>
                     <th>Nome</th>
                     <th>CPF</th>
-                    <th>Município</th>
+                    <th>Telefone</th>
                     <th class="mw-20">Ações</th>
                 </tr>
                 </thead>
                 <tbody>
-
+                <?php while ($d = mysqli_fetch_object($result)): ?>
+                    <tr id="linha-<?= $d->codigo; ?>">
+                        <td><?= $d->nome ?></td>
+                        <td><?= $d->cpf ?></td>
+                        <td><?= $d->telefone ?></td>
+                        <td>
+                            <button
+                                    class="btn btn-sm btn-link"
+                                    url="<?= $urlBeneficiados ?>/visualizar.php?codigo=<?= $d->codigo ?>"
+                            >
+                                <i class="fa-regular fa-eye text-info"></i>
+                            </button>
+                            <?php
+                            if(in_array('Bairros - Editar', $ConfPermissoes)){
+                            ?>
+                            <button
+                                    class="btn btn-sm btn-link"
+                                    url="<?= $urlBeneficiados ?>/form.php?codigo=<?= $d->codigo; ?>"
+                            >
+                                <i class="fa-solid fa-pencil text-warning"></i>
+                            </button>
+                            <?php
+                            }
+                            if(in_array('Bairros - Excluir', $ConfPermissoes)){
+                            ?>
+                            <button class="btn btn-sm btn-link btn-excluir" data-codigo="<?= $d->codigo ?>">
+                                <i class="fa-regular fa-trash-can text-danger"></i>
+                            </button>
+                            <?php
+                            }
+                            ?>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
                 </tbody>
 
             </table>
