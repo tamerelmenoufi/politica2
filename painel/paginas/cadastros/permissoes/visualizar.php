@@ -184,7 +184,7 @@ function itens($codigo)
         </thead>
         <tbody>
         <?php
-        $queryItem = "SELECT * FROM permissoes WHERE vinculo = '{$codigo}'";
+        echo $queryItem = "SELECT * FROM permissoes WHERE vinculo = '{$codigo}'";
         $resultItem = mysqli_query($con, $queryItem);
 
         while ($dItem = mysqli_fetch_object($resultItem)): ?>
