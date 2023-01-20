@@ -16,23 +16,6 @@ function getUrl()
     return 'http://politica.mohatron.com/';
 }
 
-$caminho_vendor = getUrl() . "lib/vendor";
-
-date_default_timezone_set('America/Manaus');
-
-if ($_SESSION['usuario']) {
-
-    echo $query = "SELECT * FROM usuarios WHERE codigo = '{$_SESSION['usuario']['codigo']}'";
-    $result = mysqli_query($con, $query);
-    $_SESSION['usuario'] = mysqli_fetch_array($result);
-
-    $ConfP = $_SESSION['usuario'];
-    $ConfP = $ConfP['permissoes'];
-    $ConfP = explode(",", $ConfP);
-    for ($i = 0; $i < count($ConfP); $i++) {
-        $ConfPermissoes[trim($ConfP[$i])] = trim($ConfP[$i]);
-    }
-}
 
 function InsertQuery($query){
     list($l, $d) = explode("SET", $query);
@@ -270,3 +253,22 @@ function Sts($st)
         }
         return $sum;
     }
+
+
+    $caminho_vendor = getUrl() . "lib/vendor";
+
+date_default_timezone_set('America/Manaus');
+
+if ($_SESSION['usuario']) {
+
+    echo $query = "SELECT * FROM usuarios WHERE codigo = '{$_SESSION['usuario']['codigo']}'";
+    $result = mysqli_query($con, $query);
+    $_SESSION['usuario'] = mysqli_fetch_array($result);
+
+    $ConfP = $_SESSION['usuario'];
+    $ConfP = $ConfP['permissoes'];
+    $ConfP = explode(",", $ConfP);
+    for ($i = 0; $i < count($ConfP); $i++) {
+        $ConfPermissoes[trim($ConfP[$i])] = trim($ConfP[$i]);
+    }
+}
