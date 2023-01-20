@@ -64,7 +64,6 @@ td{
             Carregando();
             busca = $("#CampoBusca").val();
             local = $(this).attr("local");
-            alert(busca)
             $.ajax({
                 url:local,
                 type:"POST",
