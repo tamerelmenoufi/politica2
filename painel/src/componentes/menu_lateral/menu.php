@@ -169,29 +169,36 @@
         if(in_array('Relatórios', $ConfPermissoes)){
         ?>
         <h6 class="collapse-header">Relatórios</h6>
+        <p>
         <a url="paginas/relatorios/index.php?tipo=bairros" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i> Bairros
         </a>
-
+        </p>
+        <p>
         <a url="paginas/relatorios/index.php?tipo=servicos" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i> Serviços
         </a>
-
+        </p>
+        <p>
         <a url="paginas/relatorios/index.php?tipo=idade" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i> Idade
         </a>
-
+        </p>
+        <p>
         <a url="paginas/relatorios/index.php?tipo=sexo" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i> Sexo
         </a>
-
+        </p>
+        <p>
         <a url="paginas/relatorios/index.php?tipo=municipios" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i> Municípios
         </a>
-
+        </p>
+        <p>
         <a url="paginas/relatorios/index.php?tipo=assessores" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i> Assessores
         </a>
+        </p>
         <?php
         }
         ?>
@@ -201,76 +208,95 @@
         <?php
         if(in_array('Fontes Locais - Visualizar', $ConfPermissoes)){
         ?>
-        <a class="collapse-item" href="#" url=""></a>
+        <p>
         <a url="paginas/cadastros/fontes_locais/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i>Fontes Locais
         </a>
+        </p>
         <?php
         }
         if(in_array('Municípios - Visualizar', $ConfPermissoes)){
         ?>
+        <p>
         <a url="paginas/cadastros/municipios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i>Municípios
         </a>
+        </p>
         <?php
         }
         if(in_array('Bairros - Visualizar', $ConfPermissoes)){
         ?>
+        <p>
         <a url="paginas/cadastros/bairros/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line">Bairros</i>
         </a>
+        </p>
         <?php
         }
 
         if(in_array('Secretarias - Visualizar', $ConfPermissoes)){
         ?>
+        <p>
         <a url="paginas/cadastros/secretarias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i>Secretarias
         </a>
+        </p>
         <?php
         }
         if(in_array('Tipo de Serviço - Visualizar', $ConfPermissoes)){
         ?>
+        <p>
         <a url="paginas/cadastros/tipo_servico/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i>Tipo de Serviço
         </a>
+        </p>
         <?php
         }
 
         if(in_array('Tipo Ação Social - Visualizar', $ConfPermissoes)){
         ?>
+        <p>
         <a url="paginas/cadastros/acao_social_tipo/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i>Tipo Ação Social
         </a>
+        </p>
         <?php
         }
 
         if(in_array('Categorias de Serviço - Visualizar', $ConfPermissoes)){
         ?>
+        <p>
         <a url="paginas/cadastros/categorias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i>Categorias de Serviço
         </a>
+        </p>
         <?php
         }
         if(in_array('Especialidades - Visualizar', $ConfPermissoes)){
         ?>
+        <p>
         <a url="paginas/cadastros/especialidades/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i>Especialidades
         </a>
+        </p>
         <?php
         }
         if(in_array('Usuários - Visualizar', $ConfPermissoes) or $_SESSION['usuario']['codigo'] == 1){
         ?>
+        <p>
         <a url="paginas/cadastros/usuarios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i> Usuários
         </a>
+        </p>
         <?php
         }
         if(in_array('Permissoes - Visualizar', $ConfPermissoes) or $_SESSION['usuario']['codigo'] == 1){
         ?>
+        <p>
         <a url="paginas/cadastros/permissoes/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-chart-line"></i> Permissoes
         </a>
+        </p>
         <?php
         }
         ?>
