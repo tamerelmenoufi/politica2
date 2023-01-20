@@ -67,6 +67,7 @@ td{
             alert(busca)
             $.ajax({
                 url:local,
+                type:"POST",
                 data:{
                     busca,
                     acao:'CampoBusca',
