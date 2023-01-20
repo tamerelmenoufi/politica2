@@ -1,8 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/politica/painel/lib/includes.php");
 
-    var_dump($_SESSION);
-
 ?>
 
 <style>
