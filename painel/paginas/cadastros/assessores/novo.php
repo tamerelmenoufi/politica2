@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'status' => false,
             'msg' => 'Erro ao salvar',
             'codigo' => $codigo,
-            'mysql_error' => mysql_error(),
+
         ]);
     }
 
