@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "INSERT INTO permissoes SET descricao = '{$descricao}', vinculo = '{$vinculo}'";
 
     if (mysqli_query($con, $query)) {
-        $codigo = mysql_insert_id();
+        $codigo = mysqli_insert_id($con);
 
         sis_logs('permissoes', $codigo, $query);
 

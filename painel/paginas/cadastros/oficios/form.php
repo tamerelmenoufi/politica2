@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (mysqli_query($con, $query)) {
-        $codigo = $codigo ?: mysql_insert_id();
+        $codigo = $codigo ?: mysqli_insert_id($con);
 
         uploadPdf($codigo);
 

@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     #file_put_contents("query.txt",$query);
 
     if (mysqli_query($con, $query)) {
-        $codigo = $codigo ?: mysql_insert_id();
+        $codigo = $codigo ?: mysqli_insert_id($con);
 
         sis_logs('usuarios', $codigo, $query);
 

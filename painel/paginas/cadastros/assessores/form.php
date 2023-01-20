@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$codigo) $data['data_cadastro'] = 'NOW()';
 
     foreach ($data as $name => $value) {
-        $attr[] = "{$name} = '" . Addslashes($value) . "'";
+        $attr[] = "{$name} = '" . addslashes($value) . "'";
     }
 
     $attr = implode(', ', $attr);
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (mysqli_query($con, $query)) {
-        $codigo = $codigo ?: mysql_insert_id();
+        $codigo = $codigo ?: mysqli_insert_id($con);
 
         sis_logs('assessores', $codigo, $query);
 
