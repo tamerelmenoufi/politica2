@@ -68,7 +68,7 @@ $_SESSION['saude_xls'] = false;
                 <tr>
                     <th colspan="6">
                         <div class="row d-md-flex flex-row align-items-center">
-                            <?php CampoBusca(); ?>
+                            <?php CampoBusca($urlServicos.'/index.php'); ?>
                         </div>
                     </th>
                 </tr>

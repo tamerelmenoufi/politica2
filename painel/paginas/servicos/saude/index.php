@@ -69,44 +69,9 @@ $_SESSION['saude_xls'] = true;
             <table id="datatable" class="table" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th colspan="6">
+                    <th colspan="5">
                         <div class="row d-md-flex flex-row align-items-center">
-                            <label>Filtros: </label>
-                            <div class="col-12 col-md-3">
-                                <div class="form-group mb-2">
-
-                                    <select
-                                            id="filtro-situacao"
-                                            class="form-control filtro-situacao"
-                                            title="Situação"
-                                            data-width="100%"
-                                    >
-                                        <?php
-                                        foreach (getSituacao() as $key => $value):
-                                            echo "<option value=\"{$value}\">{$value}</option>";
-                                        endforeach;
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- <div class="col-md-3">
-                                <div class="form-group mb-2">
-
-                                    <select
-                                            id="filtro-atendimento"
-                                            class="form-control filtro-atendimento"
-                                            title="Atendimento"
-                                            data-width="100%"
-                                    >
-                                        <?php
-                                        foreach (getAtendimento() as $value):
-                                            echo "<option value=\"{$value}\">{$value}</option>";
-                                        endforeach;
-                                        ?>
-                                    </select>
-                                </div>
-                            </div> -->
+                        <?php CampoBusca($urlServicos.'/index.php'); ?>
                         </div>
                     </th>
                 </tr>

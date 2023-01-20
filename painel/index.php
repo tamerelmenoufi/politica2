@@ -60,6 +60,24 @@ td{
         })
 
 
+        $(document).on('click', '#botaoCampoBusca', function (e) {
+            Carregando();
+            busca = $("#CampoBusca").val();
+            local = $(this).attr("local");
+            $.ajax({
+                url:local,
+                data:{
+                    busca,
+                    acao:'CampoBusca',
+                },
+                success:function(dados){
+                    $.alert('ok')
+                    $("#paginaHome").html(dados);
+                }
+            });
+        });
+
+
         //Jconfirm
         jconfirm.defaults = {
             typeAnimated: true,

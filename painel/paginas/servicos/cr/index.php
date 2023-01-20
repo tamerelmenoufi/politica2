@@ -65,27 +65,10 @@ $_SESSION['saude_xls'] = false;
             <table id="datatable" class="table" width="100%" cellspacing="0">
                 <thead>
                 <tr>
-                    <th colspan="5">
+                    <th colspan="6">
                         <div class="row d-md-flex flex-row align-items-center">
-                            <label>Filtros: </label>
-                            <div class="col-md-3">
-                                <div class="form-group mb-2">
-
-                                    <select
-                                            id="filtro-situacao"
-                                            class="form-control filtro-situacao"
-                                            title="Situação"
-                                            data-width="auto"
-                                    >
-                                        <option value=""></option>
-                                        <?php
-                                        foreach (getSituacao() as $key => $value):
-                                            echo "<option value=\"{$value}\">{$value}</option>";
-                                        endforeach;
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
+                        <?php CampoBusca($urlServicos.'/index.php'); ?>
+                        </div>
                     </th>
                 </tr>
                 <tr>

@@ -44,6 +44,13 @@ $_SESSION['saude_xls'] = false;
             <table id="datatable" class="table" width="100%" cellspacing="0">
                 <thead>
                 <tr>
+                    <th colspan="5">
+                        <div class="row d-md-flex flex-row align-items-center">
+                        <?php CampoBusca($urlServicos.'/index.php'); ?>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
                     <th>Beneficiado</th>
                     <th>Assessor</th>
                     <th>Data da Agenda</th>
