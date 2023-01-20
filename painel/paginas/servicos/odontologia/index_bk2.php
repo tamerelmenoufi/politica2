@@ -99,7 +99,7 @@ $result = mysqli_query($con, $query);
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $('#datatable thead tr')
             .clone(true)
             .addClass('filters')

@@ -253,7 +253,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $("#cpf").mask("999.999.999-99");
 
         $('#telefone').mask('(99) 9 9999-9999');

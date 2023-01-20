@@ -372,7 +372,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         //$('#contato').mask('(99) 99999-9999');
 
         $("#assessor").selectpicker();

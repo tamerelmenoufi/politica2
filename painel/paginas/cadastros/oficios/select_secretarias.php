@@ -36,7 +36,7 @@ $result = mysqli_query($con, $query);
 </select>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $(".secretaria").selectpicker();
     })
 </script>

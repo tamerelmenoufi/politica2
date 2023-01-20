@@ -114,7 +114,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $('#form-secretaria').validate();
 
         $('#form-secretaria').submit(function (e) {

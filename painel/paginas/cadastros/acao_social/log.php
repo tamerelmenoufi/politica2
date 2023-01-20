@@ -124,7 +124,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $("#assessor").selectpicker();
         $('#form-acao-social').validate();
         $("select, input, textarea").attr("disabled","disabled");

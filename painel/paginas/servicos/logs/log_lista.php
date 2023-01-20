@@ -47,7 +47,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
 
         $("button[abrir]").click(function(){
             indice = $(this).attr('cod');

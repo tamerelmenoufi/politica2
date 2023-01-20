@@ -115,7 +115,7 @@ $result = mysqli_query($con, $query);
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         var table = $('#datatable').DataTable({
             "bLengthChange": false,
             "iDisplayLength": 15

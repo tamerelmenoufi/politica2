@@ -147,7 +147,7 @@ $d = mysqli_fetch_object(mysqli_query($con, $query));
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $('#form-perfil').validate({
             rules: {
                 senha: {

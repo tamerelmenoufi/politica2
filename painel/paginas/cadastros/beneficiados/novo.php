@@ -236,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $('#cpf').mask('999.999.999-99');
 
         $('#cep').mask('99999-999');

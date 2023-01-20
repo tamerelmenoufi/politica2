@@ -216,7 +216,7 @@ function itens($codigo)
     </table>
 
     <script>
-        $(function () {
+        $(function(){ Carregando('none');
             $('.btn-excluir-item').click(function () {
                 var codigo = $(this).data('codigo');
 

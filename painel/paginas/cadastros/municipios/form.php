@@ -95,7 +95,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $('#form-municipio').validate();
 
         $('#form-municipio').submit(function (e) {

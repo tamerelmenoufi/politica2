@@ -174,7 +174,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
 
         $("#numero").mask("999/99");
         $("#assessor").selectpicker();

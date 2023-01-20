@@ -162,7 +162,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
 
         $('#servico_tipo').selectpicker();
 

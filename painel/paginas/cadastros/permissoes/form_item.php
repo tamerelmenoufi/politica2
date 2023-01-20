@@ -47,7 +47,7 @@ $vinculo = $_GET['vinculo'];
 </form>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
 
         $('#form-item').submit(function (e) {
             e.preventDefault();

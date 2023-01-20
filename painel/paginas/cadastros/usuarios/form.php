@@ -146,7 +146,7 @@ if ($codigo) {
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
 
         $('#form-usuarios').validate({
             rules: {

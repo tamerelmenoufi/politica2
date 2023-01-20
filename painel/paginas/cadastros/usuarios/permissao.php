@@ -150,7 +150,7 @@ $usuario_permissao = explode(',', $d->permissoes);
 <script src="<?= $caminho_vendor; ?>/checkbox-tree/js/checktree.js"></script>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         $("ul.checktree").checktree();
 
         $('.salvar').click(function () {

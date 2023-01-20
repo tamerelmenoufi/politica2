@@ -64,7 +64,7 @@ $result = mysqli_query($con, $query);
 </div>
 
 <script>
-    $(function () {
+    $(function(){ Carregando('none');
         dataTable = $('#datatable').DataTable({
             "processing": true,
             "serverSide": true,
