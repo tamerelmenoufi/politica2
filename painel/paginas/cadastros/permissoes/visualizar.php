@@ -89,7 +89,7 @@ $d = mysqli_fetch_object($result);
         </div>
     </div>
 
-    <div class="card shadow">
+    <div class="card shadow m-3">
         <div class="card-header d-flex flex-row align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">
                 Itens
