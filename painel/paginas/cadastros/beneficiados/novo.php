@@ -305,7 +305,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         //     url: '<?= $urlBeneficiados; ?>/visualizar.php',
                         //     data: {codigo: retorno.codigo},
                         //     success: function (response) {
-                        //         $('#palco').html(response);
+                        //         $("#paginaHome").html(response);
                         //     }
                         // })
 

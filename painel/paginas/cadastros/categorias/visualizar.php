@@ -94,7 +94,7 @@ Carregando('none');
                                     $.ajax({
                                         url: '<?= $servicoTipo; ?>/index.php',
                                         success: function (response) {
-                                            $('#palco').html(response);
+                                            $("#paginaHome").html(response);
                                         }
                                     });
                                 } else {

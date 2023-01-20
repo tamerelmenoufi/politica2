@@ -149,7 +149,7 @@ $d = mysqli_fetch_object($result);
                                     $.ajax({
                                         url: '<?= $acaoSocial; ?>/index.php',
                                         success: function (response) {
-                                            $('#palco').html(response);
+                                            $("#paginaHome").html(response);
                                         }
                                     });
                                 } else {

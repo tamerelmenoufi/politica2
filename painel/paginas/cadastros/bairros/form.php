@@ -113,7 +113,7 @@ if ($codigo) {
                             url: '<?= $servicoTipo; ?>/visualizar.php',
                             data: {codigo: retorno.codigo},
                             success: function (response) {
-                                $('#palco').html(response);
+                                $("#paginaHome").html(response);
                             }
                         })
                     } else {

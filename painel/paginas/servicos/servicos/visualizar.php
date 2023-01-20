@@ -116,7 +116,7 @@ $d = mysqli_fetch_object($result);
                                     $.ajax({
                                         url: '<?= $urlServicos; ?>/index.php',
                                         success: function (response) {
-                                            $('#palco').html(response);
+                                            $("#paginaHome").html(response);
                                         }
                                     });
                                 } else {

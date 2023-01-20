@@ -127,7 +127,7 @@ $d = mysqli_fetch_object($result);
                                     $.ajax({
                                         url: '<?= $urlAssessores; ?>/index.php',
                                         success: function (response) {
-                                            $('#palco').html(response);
+                                            $("#paginaHome").html(response);
                                         }
                                     });
                                 } else {

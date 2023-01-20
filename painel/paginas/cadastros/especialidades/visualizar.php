@@ -98,7 +98,7 @@ $d = mysqli_fetch_object($result);
                                     $.ajax({
                                         url: '<?= $especialidades; ?>/index.php',
                                         success: function (response) {
-                                            $('#palco').html(response);
+                                            $("#paginaHome").html(response);
                                         }
                                     });
                                 } else {
