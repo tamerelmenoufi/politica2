@@ -66,7 +66,7 @@ if ($codigo) {
                 <label for="tipo">Descrição <i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="tipo"
                         name="tipo"
                         value="<?= $d->tipo; ?>"

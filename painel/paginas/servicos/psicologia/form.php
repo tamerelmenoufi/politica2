@@ -119,7 +119,7 @@ if ($codigo) {
                     Especialidade <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="especialidade"
                         name="especialidade"
                         data-live-search="true"
@@ -147,7 +147,7 @@ if ($codigo) {
                     Beneficiado <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="beneficiado"
                         name="beneficiado"
                         data-live-search="true"
@@ -180,7 +180,7 @@ if ($codigo) {
                 </label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="contato"
                         name="contato"
                         value="<?= $d->contato; ?>"
@@ -195,7 +195,7 @@ if ($codigo) {
                 </label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="especialista"
                         name="especialista"
                         value="<?= $d->especialista; ?>"
@@ -209,7 +209,7 @@ if ($codigo) {
                     Assessor <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="assessor"
                         name="assessor"
                         data-live-search="true"
@@ -240,7 +240,7 @@ if ($codigo) {
                     Fonte Local <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="local_fonte"
                         name="local_fonte"
                         data-live-search="true"
@@ -269,7 +269,7 @@ if ($codigo) {
                         <label for="data_agenda">Data de Agenda <i class="text-danger"></i></label>
                         <input
                                 type="datetime-local"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="data_agenda"
                                 name="data_agenda"
                                 value="<?= $codigo ? strftime('%Y-%m-%dT%H:%M:%S', strtotime($d->data_agenda)) : ''; ?>"
@@ -284,7 +284,7 @@ if ($codigo) {
                             Situação <i class="text-danger">*</i>
                         </label>
                         <select
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="situacao"
                                 name="situacao"
                                 required

@@ -124,7 +124,7 @@ if ($codigo) {
                         Especialidade <i class="text-danger">*</i>
                     </label>
                     <select
-                            class="form-control mb-1"
+                            class="form-control mb-2"
                             id="especialidade"
                             name="especialidade"
                             data-live-search="true"
@@ -152,7 +152,7 @@ if ($codigo) {
                     Beneficiado <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="beneficiado"
                         name="beneficiado"
                         data-live-search="true"
@@ -185,7 +185,7 @@ if ($codigo) {
                 </label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="contato"
                         name="contato"
                         value="<?= $d->contato; ?>"
@@ -201,7 +201,7 @@ if ($codigo) {
                 </label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="especialista"
                         name="especialista"
                         value="<?= $d->especialista; ?>"
@@ -215,7 +215,7 @@ if ($codigo) {
                     Assessor <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="assessor"
                         name="assessor"
                         data-live-search="true"
@@ -246,7 +246,7 @@ if ($codigo) {
                     <?= (($cat_desc == 'Outros') ? 'Tipo' : 'Fonte Local') ?> <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="local_fonte"
                         name="local_fonte"
                         data-live-search="true"
@@ -275,7 +275,7 @@ if ($codigo) {
                 </label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="detalhes"
                         name="detalhes"
                         value="<?= $d->detalhes; ?>"
@@ -290,7 +290,7 @@ if ($codigo) {
                 </label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="local_responsavel"
                         name="local_responsavel"
                         value="<?= $d->local_responsavel; ?>"
@@ -305,7 +305,7 @@ if ($codigo) {
                 </label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="local_identificacao"
                         name="local_identificacao"
                         value="<?= $d->local_identificacao; ?>"
@@ -319,7 +319,7 @@ if ($codigo) {
                         <label for="data_agenda">Data de Agenda <i class="text-danger"></i></label>
                         <input
                                 type="datetime-local"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="data_agenda"
                                 name="data_agenda"
                                 value="<?= $codigo ? strftime('%Y-%m-%dT%H:%M:%S', strtotime($d->data_agenda)) : ''; ?>"
@@ -335,7 +335,7 @@ if ($codigo) {
                             Situação <i class="text-danger">*</i>
                         </label>
                         <select
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="situacao"
                                 name="situacao"
                                 required

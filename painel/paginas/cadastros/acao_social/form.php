@@ -90,7 +90,7 @@ if ($codigo) {
                     Assessor <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="assessor"
                         name="assessor"
                         data-live-search="true"
@@ -120,7 +120,7 @@ if ($codigo) {
                 <label for="local">Local <i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="local"
                         name="local"
                         value="<?= $d->local; ?>"
@@ -161,7 +161,7 @@ if ($codigo) {
 
             <div class="form-group">
                 <label for="descricao">Descrição<i class="text-danger">*</i></label>
-                <textarea id="descricao" name="descricao" class="form-control mb-1"><?= $d->descricao ?></textarea>
+                <textarea id="descricao" name="descricao" class="form-control mb-2"><?= $d->descricao ?></textarea>
             </div>
 
             <div class="row">
@@ -170,7 +170,7 @@ if ($codigo) {
                         <label for="data">Data <i class="text-danger">*</i></label>
                         <input
                                 type="datetime-local"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="data"
                                 name="data"
                                 value="<?= $codigo ? strftime('%Y-%m-%dT%H:%M:%S', strtotime($d->data)) : ''; ?>"

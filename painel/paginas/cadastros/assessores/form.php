@@ -67,7 +67,7 @@ if ($codigo) {
                 <label for="nome">Nome <i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="nome"
                         name="nome"
                         value="<?= $d->nome; ?>"
@@ -81,7 +81,7 @@ if ($codigo) {
                         <label for="cpf">CPF <i class="text-danger"></i></label>
                         <input
                                 type="text"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="cpf"
                                 name="cpf"
                                 value="<?= $d->cpf; ?>"
@@ -96,7 +96,7 @@ if ($codigo) {
                         </label>
                         <input
                                 type="date"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="data_nascimento"
                                 name="data_nascimento"
                                 value="<?= $d->data_nascimento; ?>"
@@ -109,7 +109,7 @@ if ($codigo) {
                     <div class="form-group">
                         <label for="sexo">Sexo <i class="text-danger">*</i></label>
                         <select
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="sexo"
                                 name="sexo"
                                 required
@@ -136,7 +136,7 @@ if ($codigo) {
                         </label>
                         <input
                                 type="email"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="email"
                                 name="email"
                                 value="<?= $d->email; ?>"
@@ -151,7 +151,7 @@ if ($codigo) {
                         </label>
                         <input
                                 type="text"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="telefone"
                                 name="telefone"
                                 value="<?= $d->telefone; ?>"
@@ -169,7 +169,7 @@ if ($codigo) {
                             Municipio <i class="text-danger">*</i>
                         </label>
                         <select
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="municipio"
                                 name="municipio"
                                 data-live-search="true"
@@ -198,7 +198,7 @@ if ($codigo) {
                         </label>
                         <input
                                 type="text"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="endereco"
                                 name="endereco"
                                 value=" <?= $d->endereco; ?>"
@@ -214,7 +214,7 @@ if ($codigo) {
                     Responsavel <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="responsavel"
                         name="responsavel"
                         required

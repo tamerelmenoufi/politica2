@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="nome">Nome <i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="nome"
                         name="nome"
                         value="<?= $d->nome; ?>"
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="cpf">CPF <i class="text-danger"></i></label>
                         <input
                                 type="text"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="cpf"
                                 name="cpf"
                                 value="<?= $d->cpf; ?>"
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </label>
                         <input
                                 type="date"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="data_nascimento"
                                 name="data_nascimento"
                                 value="<?= $d->data_nascimento; ?>"
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="form-group">
                         <label for="sexo">Sexo <i class="text-danger">*</i></label>
                         <select
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="sexo"
                                 name="sexo"
                                 required
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </label>
                         <input
                                 type="email"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="email"
                                 name="email"
                                 value="<?= $d->email; ?>"
@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </label>
                         <input
                                 type="text"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="telefone"
                                 name="telefone"
                                 value="<?= $d->telefone; ?>"
@@ -162,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             Municipio <i class="text-danger">*</i>
                         </label>
                         <select
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="municipio"
                                 name="municipio"
                                 data-live-search="true"
@@ -191,7 +191,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </label>
                         <input
                                 type="text"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="endereco"
                                 name="endereco"
                                 value=" <?= $d->endereco; ?>"
@@ -207,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     Responsavel <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="responsavel"
                         name="responsavel"
                         required

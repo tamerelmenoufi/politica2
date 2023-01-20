@@ -67,7 +67,7 @@ if ($codigo) {
                     Tipo de Serviço <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="servico_tipo"
                         name="servico_tipo"
                         data-live-search="true"
@@ -93,7 +93,7 @@ if ($codigo) {
                 <label for="descricao">Descrição<i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="descricao"
                         name="descricao"
                         maxlength="255"

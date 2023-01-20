@@ -66,7 +66,7 @@ if ($codigo) {
                 <label for="descricao">Descrição <i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="descricao"
                         name="descricao"
                         value="<?= $d->municipio; ?>"

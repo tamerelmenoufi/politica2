@@ -168,12 +168,12 @@
             <img id="profile-img" class="profile-img-card" src="img/logopainel.png" style="width:80px;" />
 
             <div class="form-floating mb-2">
-                <input type="text" class="form-control mb-1" id="login" placeholder="Digite seu login" required autofocus>
+                <input type="text" class="form-control mb-2" id="login" placeholder="Digite seu login" required autofocus>
                 <label for="login">Login</label>
             </div>
 
             <div class="form-floating mb-2">
-                <input type="password" class="form-control mb-1" id="senha" placeholder="Digite sua Senha" required>
+                <input type="password" class="form-control mb-2" id="senha" placeholder="Digite sua Senha" required>
                 <label for="senha">Senha</label>
             </div>
             <div id="remember" class="checkbox mb-2 mt-2">
@@ -185,8 +185,8 @@
 
             <!-- <div class="form-signin">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="login" class="form-control mb-1" placeholder="Login">
-                <input type="password" id="senha" class="form-control mb-1" placeholder="Senha" required>
+                <input type="text" id="login" class="form-control mb-2" placeholder="Login">
+                <input type="password" id="senha" class="form-control mb-2" placeholder="Senha" required>
                 <div id="remember" class="checkbox mb-1 mt-1">
                     <label>
                         <input type="checkbox" value="remember-me"> Manter-me sempre conectado

@@ -75,7 +75,7 @@ if ($codigo) {
                 <label for="nome">Nome <i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="nome"
                         name="nome"
                         value="<?= $d->nome; ?>"
@@ -87,7 +87,7 @@ if ($codigo) {
                 <label for="usuario">Usuário <i class="text-danger">*</i></label>
                 <input
                         type="text"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="usuario"
                         name="usuario"
                         value="<?= $d->usuario; ?>"
@@ -103,7 +103,7 @@ if ($codigo) {
                         <label for="senha">Senha <i class="text-danger">*</i></label>
                         <input
                                 type="password"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="senha"
                                 name="senha"
                                 value="<?= !$codigo ? $d->senha : ''; ?>"
@@ -116,7 +116,7 @@ if ($codigo) {
                         <label for="senha_2">Confirmar senha <i class="text-danger">*</i></label>
                         <input
                                 type="password"
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="senha_2"
                                 name="senha_2"
                             <?= !$codigo ? 'required' : ''; ?>

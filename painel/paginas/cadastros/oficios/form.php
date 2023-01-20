@@ -111,7 +111,7 @@ if ($codigo) {
                         type="text"
                         name="numero"
                         id="numero"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         value="<?=$d->numero?>"
                         required
                 >
@@ -123,7 +123,7 @@ if ($codigo) {
                     Assessor <i class="text-danger">*</i>
                 </label>
                 <select
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         id="assessor"
                         name="assessor"
                         data-live-search="true"
@@ -157,7 +157,7 @@ if ($codigo) {
                             Esfera <i class="text-danger">*</i>
                         </label>
                         <select
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="esfera"
                                 name="esfera"
                                 required
@@ -216,7 +216,7 @@ if ($codigo) {
                 <textarea
                         id="descricao"
                         name="descricao"
-                        class="form-control mb-1"
+                        class="form-control mb-2"
                         rows="5"
                 ><?= $d->descricao; ?></textarea>
             </div>
@@ -241,7 +241,7 @@ if ($codigo) {
                             Situação <i class="text-danger">*</i>
                         </label>
                         <select
-                                class="form-control mb-1"
+                                class="form-control mb-2"
                                 id="situacao"
                                 name="situacao"
                                 required
