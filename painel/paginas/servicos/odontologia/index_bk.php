@@ -64,7 +64,7 @@ $result = mysqli_query($con, $query);
                 </tr>
                 </thead>
                 <tbody>
-                <?php while ($d = mysql_fetch_object($result)): ?>
+                <?php while ($d = mysqli_fetch_object($result)): ?>
                     <tr id="linha-<?= $d->codigo; ?>">
                         <td><?= $d->beneficiado; ?></td>
                         <td><?= $d->assessor; ?></td>

@@ -15,14 +15,14 @@ $result = mysqli_query($con, $query);
         data-none-selected-text="Selecione"
         required
 >
-    <?php while ($d = mysql_fetch_object($result)): ?>
+    <?php while ($d = mysqli_fetch_object($result)): ?>
 
         <option value=""></option>
         <?php
         $query = "SELECT * FROM secretarias WHERE esfera = '{$esfera}' ORDER BY descricao";
         $result = mysqli_query($con, $query);
 
-        while ($s = mysql_fetch_object($result)): ?>
+        while ($s = mysqli_fetch_object($result)): ?>
             <option
                 <?= ($codigo and $d->secretaria == $s->codigo) ? 'selected' : ''; ?>
                     value="<?= $s->codigo ?>">

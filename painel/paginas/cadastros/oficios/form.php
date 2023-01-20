@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //     $q = "select * from oficios_sequecia where ano = year(NOW())";
     //     $r = mysqli_query($con, $q);
     //     if(mysql_num_rows($r)){
-    //         $d = mysql_fetch_object($r);
+    //         $d = mysqli_fetch_object($r);
     //         $n = $d->numero;
     //         mysqli_query($con, "update oficios_sequecia set numero = (numero + 1) where codigo = '{$d->codigo}'");
     //     }else{
@@ -66,7 +66,7 @@ $codigo = $_GET['codigo'];
 if ($codigo) {
     $query = "SELECT * FROM oficios WHERE codigo = '{$codigo}'";
     $result = mysqli_query($con, $query);
-    $d = mysql_fetch_object($result);
+    $d = mysqli_fetch_object($result);
 }
 
 ?>
@@ -147,7 +147,7 @@ if ($codigo) {
                     $query = "SELECT * FROM assessores ORDER BY nome";
                     $result = mysqli_query($con, $query);
 
-                    while ($a = mysql_fetch_object($result)): ?>
+                    while ($a = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->assessor == $a->codigo) ? 'selected' : ''; ?>
                                 value="<?= $a->codigo ?>">
@@ -206,7 +206,7 @@ if ($codigo) {
                                     $query = "SELECT * FROM secretarias WHERE esfera = '{$d->esfera}' ORDER BY descricao";
                                     $result = mysqli_query($con, $query);
 
-                                    while ($s = mysql_fetch_object($result)): ?>
+                                    while ($s = mysqli_fetch_object($result)): ?>
                                         <option
                                             <?= ($codigo and $d->secretaria == $s->codigo) ? 'selected' : ''; ?>
                                                 value="<?= $s->codigo ?>">

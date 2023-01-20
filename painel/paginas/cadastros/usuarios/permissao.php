@@ -22,7 +22,7 @@ $codigo = $_GET['codigo'];
 
 $query = "SELECT u.* FROM usuarios u WHERE u.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 
 $usuario_permissao = explode(',', $d->permissoes);
 ?>
@@ -109,7 +109,7 @@ $usuario_permissao = explode(',', $d->permissoes);
         $queryPerm = "SELECT * FROM permissoes ORDER BY descricao";
         $resultPerm = mysqli_query($con, $queryPerm);
         $permissao = [];
-        while ($dadosPerm = mysql_fetch_object($resultPerm)) {
+        while ($dadosPerm = mysqli_fetch_object($resultPerm)) {
             if (!$dadosPerm->vinculo) {
 
                 $queryVinc = "SELECT * FROM permissoes WHERE vinculo = '{$dadosPerm->codigo}'";
@@ -119,7 +119,7 @@ $usuario_permissao = explode(',', $d->permissoes);
                     $permissao[] = $dadosPerm->descricao;
                 }
 
-                while ($dVinc = mysql_fetch_object($resultVinc)) {
+                while ($dVinc = mysqli_fetch_object($resultVinc)) {
                     $permissao[$dadosPerm->descricao][$dVinc->descricao] = [
                         "{$dVinc->descricao} - Visualizar",
                         "{$dVinc->descricao} - Cadastrar",

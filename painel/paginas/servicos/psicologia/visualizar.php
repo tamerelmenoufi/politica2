@@ -10,7 +10,7 @@ $query = "SELECT s.*, a.nome AS assessor, b.nome AS beneficiado, lf.descricao AS
     . "WHERE s.codigo = '{$codigo}'";
 
 $result = mysqli_query($con, $query);
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 
 ?>
 

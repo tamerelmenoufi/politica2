@@ -48,7 +48,7 @@ $codigo = $_GET['codigo'];
 if ($codigo) {
     $query = "SELECT * FROM permissoes WHERE codigo = '{$codigo}'";
     $result = mysqli_query($con, $query);
-    $d = mysql_fetch_object($result);
+    $d = mysqli_fetch_object($result);
 }
 
 ?>
@@ -99,7 +99,7 @@ if ($codigo) {
                     $query = "SELECT * FROM permissoes where vinculo = '0' ORDER BY descricao";
                     $resultP = mysqli_query($con, $query);
 
-                    while ($p = mysql_fetch_object($resultP)): ?>
+                    while ($p = mysqli_fetch_object($resultP)): ?>
                         <option
                             <?= ($codigo and $d->vinculo == $p->codigo) ? 'selected' : ''; ?>
                                 value="<?= $p->codigo ?>"

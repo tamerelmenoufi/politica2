@@ -17,7 +17,7 @@ $query = "SELECT bai.descricao AS descricao, COUNT(*) AS qt FROM bairros bai "
 
 $result = mysqli_query($con, $query);
 $i = 0;
-while ($d = mysql_fetch_object($result)) {
+while ($d = mysqli_fetch_object($result)) {
     $rotulo[] = $d->descricao;
     $qt[] = $d->qt;
     $lg[] = $d->descricao; //$Legenda[$i];

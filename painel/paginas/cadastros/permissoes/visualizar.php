@@ -31,7 +31,7 @@ $query = "SELECT p1.*, p2.descricao AS vinculo FROM permissoes p1 "
     . "WHERE p1.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
 
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 
 ?>
 
@@ -198,7 +198,7 @@ function itens($codigo)
         $queryItem = "SELECT * FROM permissoes WHERE vinculo = '{$codigo}'";
         $resultItem = mysqli_query($con, $queryItem);
 
-        while ($dItem = mysql_fetch_object($resultItem)): ?>
+        while ($dItem = mysqli_fetch_object($resultItem)): ?>
             <tr id="linha-<?= $dItem->codigo; ?>">
                 <td><?= $dItem->descricao; ?></td>
                 <td>

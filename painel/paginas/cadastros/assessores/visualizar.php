@@ -6,7 +6,7 @@ $query = "SELECT a.*, m.municipio AS municipio FROM assessores a "
     . "LEFT JOIN municipios m ON m.codigo = a.municipio "
     . "WHERE a.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 
 ?>
 

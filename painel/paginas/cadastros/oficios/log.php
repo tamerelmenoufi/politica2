@@ -61,7 +61,7 @@ if ($codigo) {
                     $query = "SELECT * FROM assessores ORDER BY nome";
                     $result = mysqli_query($con, $query);
 
-                    while ($a = mysql_fetch_object($result)): ?>
+                    while ($a = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d['assessor'] == $a->codigo) ? 'selected' : ''; ?>
                                 value="<?= $a->codigo ?>">
@@ -117,7 +117,7 @@ if ($codigo) {
                                     $query = "SELECT * FROM secretarias WHERE esfera = '{$d['esfera']}' ORDER BY descricao";
                                     $result = mysqli_query($con, $query);
 
-                                    while ($s = mysql_fetch_object($result)): ?>
+                                    while ($s = mysqli_fetch_object($result)): ?>
                                         <option
                                             <?= ($codigo and $d->secretaria == $s->codigo) ? 'selected' : ''; ?>
                                                 value="<?= $s->codigo ?>">

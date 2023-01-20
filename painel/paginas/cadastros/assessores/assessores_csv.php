@@ -7,6 +7,6 @@
     $query = "SELECT * FROM assessores WHERE deletado != '1'";
     $result = mysqli_query($con, $query);
         echo "ASSESSOR(A);CPF;RESPONSÁVEL\n";
-    while ($d = mysql_fetch_object($result)):
+    while ($d = mysqli_fetch_object($result)):
         echo "{$d->nome};{$d->cpf};{$d->responsavel}\n";
     endwhile;

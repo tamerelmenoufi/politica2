@@ -48,7 +48,7 @@ $codigo = $_GET['codigo'];
 if ($codigo) {
     $query = "SELECT * FROM local_fontes WHERE codigo = '{$codigo}'";
     $result = mysqli_query($con, $query);
-    $d = mysql_fetch_object($result);
+    $d = mysqli_fetch_object($result);
 }
 
 ?>
@@ -91,7 +91,7 @@ if ($codigo) {
                     $query = "SELECT * FROM servico_tipo where deletado = '0' ORDER BY tipo";
                     $result = mysqli_query($con, $query);
 
-                    while ($s = mysql_fetch_object($result)): ?>
+                    while ($s = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->servico_tipo == $s->codigo) ? 'selected' : ''; ?>
                                 value="<?= $s->codigo ?>">
@@ -118,7 +118,7 @@ if ($codigo) {
                     $query = "SELECT * FROM categorias where deletado = '0' ORDER BY descricao";
                     $result = mysqli_query($con, $query);
 
-                    while ($s = mysql_fetch_object($result)): ?>
+                    while ($s = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->categoria == $s->codigo) ? 'selected' : ''; ?>
                                 value="<?= $s->codigo ?>">

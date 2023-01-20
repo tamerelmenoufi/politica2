@@ -18,7 +18,7 @@ $codigo = $_GET['codigo'];
 $query = "SELECT u.* FROM usuarios u "
     . "WHERE u.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 
 ?>
 

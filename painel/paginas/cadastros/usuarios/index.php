@@ -53,7 +53,7 @@ $result = mysqli_query($con, $query);
                 </tr>
                 </thead>
                 <tbody>
-                <?php while ($d = mysql_fetch_object($result)):
+                <?php while ($d = mysqli_fetch_object($result)):
                     $status = $d->status == '1' ? 'success' : 'danger';
                     ?>
                     <tr id="linha-<?= $d->codigo; ?>">

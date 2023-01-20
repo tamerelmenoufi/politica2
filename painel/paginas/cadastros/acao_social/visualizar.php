@@ -5,7 +5,7 @@ $query = "SELECT ac.*, a.nome AS assessor FROM acao_social ac "
     . "LEFT JOIN assessores a ON a.codigo = ac.assessor "
     . "WHERE ac.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 
 ?>
 
@@ -103,7 +103,7 @@ $d = mysql_fetch_object($result);
                 $servicosDescricao = [];
 
                 if (mysql_num_rows($resultServicos)):
-                    while ($dadosServicos = mysql_fetch_object($resultServicos)):
+                    while ($dadosServicos = mysqli_fetch_object($resultServicos)):
                         $servicosDescricao[] = $dadosServicos->tipo;
                     endwhile;
 

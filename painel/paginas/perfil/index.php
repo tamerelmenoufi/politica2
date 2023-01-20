@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $query = "SELECT * FROM usuarios WHERE codigo = '{$_SESSION['usuario']['codigo']}'";
-$d = mysql_fetch_object(mysqli_query($con, $query));
+$d = mysqli_fetch_object(mysqli_query($con, $query));
 
 
 ?>

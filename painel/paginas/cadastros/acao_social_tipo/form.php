@@ -48,7 +48,7 @@ $codigo = $_GET['codigo'];
 if ($codigo) {
     $query = "SELECT * FROM acao_social_tipo WHERE codigo = '{$codigo}'";
     $result = mysqli_query($con, $query);
-    $d = mysql_fetch_object($result);
+    $d = mysqli_fetch_object($result);
 }
 
 ?>

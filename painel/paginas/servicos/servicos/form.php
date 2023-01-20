@@ -48,7 +48,7 @@ $codigo = $_GET['codigo'];
 if ($codigo) {
     $query = "SELECT * FROM servicos WHERE codigo = '{$codigo}'";
     $result = mysqli_query($con, $query);
-    $d = mysql_fetch_object($result);
+    $d = mysqli_fetch_object($result);
 }
 
 ?>
@@ -91,7 +91,7 @@ if ($codigo) {
                     $query = "SELECT * FROM servico_tipo ORDER BY tipo";
                     $result = mysqli_query($con, $query);
 
-                    while ($s = mysql_fetch_object($result)): ?>
+                    while ($s = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->tipo == $s->codigo) ? 'selected' : ''; ?>
                                 value="<?= $s->codigo ?>">
@@ -119,7 +119,7 @@ if ($codigo) {
                     $query = "SELECT * FROM beneficiados ORDER BY nome";
                     $result = mysqli_query($con, $query);
 
-                    while ($b = mysql_fetch_object($result)): ?>
+                    while ($b = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->beneficiado == $b->codigo) ? 'selected' : ''; ?>
                                 value="<?= $b->codigo ?>">
@@ -177,7 +177,7 @@ if ($codigo) {
                     $query = "SELECT * FROM assessores ORDER BY nome";
                     $result = mysqli_query($con, $query);
 
-                    while ($a = mysql_fetch_object($result)): ?>
+                    while ($a = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->assessor == $a->codigo) ? 'selected' : ''; ?>
                                 value="<?= $a->codigo ?>">
@@ -205,7 +205,7 @@ if ($codigo) {
                     $query = "SELECT * FROM local_fontes ORDER BY descricao";
                     $result = mysqli_query($con, $query);
 
-                    while ($l = mysql_fetch_object($result)): ?>
+                    while ($l = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->local_fonte == $l->codigo) ? 'selected' : ''; ?>
                                 value="<?= $l->codigo ?>">

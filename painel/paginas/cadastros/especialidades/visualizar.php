@@ -5,7 +5,7 @@ $query = "SELECT lf.*, st.tipo AS tipo FROM especialidades lf "
     . "LEFT JOIN servico_tipo st ON st.codigo = lf.servico_tipo "
     . "WHERE lf.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 
 ?>
 

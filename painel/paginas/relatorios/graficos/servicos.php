@@ -26,7 +26,7 @@
     $query = "SELECT b.tipo, COUNT(*) AS qt FROM servicos a LEFT JOIN servico_tipo b ON a.tipo = b.codigo GROUP BY a.tipo ORDER BY qt DESC";
     $result = mysqli_query($con, $query);
     $i=0;
-    while($d = mysql_fetch_object($result)){
+    while($d = mysqli_fetch_object($result)){
         $rotulo[] = $d->tipo;
         $qt[] =  $d->qt;
         $lg[] = $d->tipo; //$Legenda[$i];

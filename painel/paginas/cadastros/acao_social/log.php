@@ -44,7 +44,7 @@ if ($codigo) {
                     $query = "SELECT * FROM assessores ORDER BY nome";
                     $result = mysqli_query($con, $query);
 
-                    while ($a = mysql_fetch_object($result)): ?>
+                    while ($a = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d['assessor'] == $a->codigo) ? 'selected' : ''; ?>
                                 value="<?= $a->codigo ?>">
@@ -78,7 +78,7 @@ if ($codigo) {
 
                 $servicos_check = explode(',', $d['servicos']);
 
-                while ($dados_servico = mysql_fetch_object($resultServico)):
+                while ($dados_servico = mysqli_fetch_object($resultServico)):
                     $isChecked = (@in_array($dados_servico->codigo, $servicos_check));
                     ?>
                     <div class="form-check">

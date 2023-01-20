@@ -189,7 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             $query = "SELECT * FROM municipios";
                             $result = mysqli_query($con, $query);
 
-                            while ($m = mysql_fetch_object($result)): ?>
+                            while ($m = mysqli_fetch_object($result)): ?>
                                 <option
                                     <?= ($codigo and $d->municipio == $m->codigo) ? 'selected' : ''; ?>
                                         value="<?= $m->codigo ?>">

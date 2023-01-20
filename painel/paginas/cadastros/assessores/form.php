@@ -50,7 +50,7 @@ $codigo = $_GET['codigo'];
 if ($codigo) {
     $query = "SELECT * FROM assessores WHERE codigo = '{$codigo}'";
     $result = mysqli_query($con, $query);
-    $d = mysql_fetch_object($result);
+    $d = mysqli_fetch_object($result);
 }
 
 ?>
@@ -192,7 +192,7 @@ if ($codigo) {
                             $query = "SELECT * FROM municipios";
                             $result = mysqli_query($con, $query);
 
-                            while ($m = mysql_fetch_object($result)): ?>
+                            while ($m = mysqli_fetch_object($result)): ?>
                                 <option
                                     <?= ($codigo and $d->municipio == $m->codigo) ? 'selected' : ''; ?>
                                         value="<?= $m->codigo ?>">

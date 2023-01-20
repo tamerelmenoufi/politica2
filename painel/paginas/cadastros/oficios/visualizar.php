@@ -8,7 +8,7 @@ $query = "SELECT o.*, a.nome AS assessor, s.descricao AS secretaria FROM oficios
     . "WHERE o.codigo = '{$codigo}'";
 
 $result = mysqli_query($con, $query);
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 
 ?>
 
