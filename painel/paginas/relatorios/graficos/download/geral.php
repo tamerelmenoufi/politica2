@@ -1,5 +1,5 @@
 <?php
-    include "../../../../../lib/includes.php";
+    include("{$_SERVER['DOCUMENT_ROOT']}/politica/painel/lib/includes.php");
 
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=geral.csv');
