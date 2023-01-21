@@ -1,5 +1,5 @@
 <?php
-    include "../../../lib/includes.php";
+    include("{$_SERVER['DOCUMENT_ROOT']}/politica/painel/lib/includes.php");
 ?>
 <div class="row m-3">
     <div class="col-md-10 offset-md-1">
