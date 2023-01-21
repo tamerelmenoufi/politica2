@@ -75,7 +75,7 @@ if ($lg) $lg = "'" . implode("', '", $lg) . "'";
 if ($qt) $qt = implode(", ", $qt);
 ?>
 <script>
-
+Carregando('none')
     const ctx<?=$md5?> = document.getElementById('myChart<?=$md5?>');
     const myChart<?=$md5?> = new Chart(ctx<?=$md5?>,
         {

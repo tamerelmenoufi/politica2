@@ -13,7 +13,7 @@
 
 
 <script>
-
+    Carregando('none')
     function grafico(obj,opc){
         $.ajax({
             url:"paginas/relatorios/graficos/"+opc+".php?<?=md5(date("YmdHis"))?>",
