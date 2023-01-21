@@ -1,7 +1,7 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/politica/painel/lib/includes.php");
+    include "../../../lib/includes.php";
 ?>
-<div class="row">
+<div class="row m-3">
     <div class="col-md-10 offset-md-1">
         <div class="card">
             <div class="card-body">
@@ -26,7 +26,7 @@
         });
     }
 
-    $(function(){ Carregando('none');
+    $(function(){
         $("div[graficos]").each(function(){
             obj = $(this);
             opc = $(this).attr("opc");

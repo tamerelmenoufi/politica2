@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/politica/painel/lib/includes.php");
+    include "../../../../lib/includes.php";
     $md5  = md5(date("YmdHis").$_SERVER["PHP_SELF"]);
 
     $Legenda = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
@@ -27,11 +27,11 @@
     ."GROUP BY a.nome ORDER BY qt DESC";
 
     #$query = "select b.tipo, count(*) as qt from servicos a left join servico_tipo b on a.tipo = b.codigo group by a.tipo";
-    $result = mysqli_query($con, $query);
-    $n = mysqli_num_rows($result);
+    $result = mysql_query($query);
+    $n = mysql_num_rows($result);
 
     $i=0;
-    while($d = mysqli_fetch_object($result)){
+    while($d = mysql_fetch_object($result)){
         $rotulo[] = $d->descricao;
         $qt[] =  $d->qt;
         $lg[] = $d->descricao; //$Legenda[$i];
