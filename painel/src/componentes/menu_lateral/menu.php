@@ -42,7 +42,7 @@
         ?>
         <p>
           <a url="paginas/servicos/cn/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-            Certidão de Nascimento
+          <i class="fa-solid fa-angles-right"></i> Certidão de Nascimento
           </a>
         </p>
         <?php
@@ -51,7 +51,7 @@
         ?>
         <p>
         <a url="paginas/servicos/rg/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Registro Geral
+        <i class="fa-solid fa-angles-right"></i> Registro Geral
         </a>
         </p>
         <?php
@@ -60,7 +60,7 @@
         ?>
         <p>
         <a url="paginas/servicos/cras/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          CRAS
+        <i class="fa-solid fa-angles-right"></i> CRAS
         </a>
         </p>
         <?php
@@ -69,7 +69,7 @@
         ?>
         <p>
         <a url="paginas/servicos/cr/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          CR
+        <i class="fa-solid fa-angles-right"></i> CR
         </a>
         </p>
         <?php
@@ -78,7 +78,7 @@
         ?>
         <p>
         <a url="paginas/servicos/psicologia/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Psicologia
+        <i class="fa-solid fa-angles-right"></i> Psicologia
         </a>
         </p>
         <?php
@@ -87,7 +87,7 @@
         ?>
         <p>
         <a url="paginas/servicos/odontologia/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Odontologia
+        <i class="fa-solid fa-angles-right"></i> Odontologia
         </a>
         </p>
         <?php
@@ -96,7 +96,7 @@
         ?>
         <p>
         <a url="paginas/servicos/juridico/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Jurídico
+        <i class="fa-solid fa-angles-right"></i> Jurídico
         </a>
         </p>
         <?php
@@ -113,7 +113,7 @@
         ?>
         <p>
         <a url="paginas/servicos/saude/index.php?categoria=<?=$c->codigo?>" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <?=$c->descricao?>
+        <i class="fa-solid fa-angles-right"></i> <?=$c->descricao?>
         </a>
         </p>
         <?php
@@ -126,7 +126,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/acao_social/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Ação Social
+        <i class="fa-solid fa-angles-right"></i> Ação Social
         </a>
         </p>
         <?php
@@ -135,7 +135,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/oficios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Ofícios
+        <i class="fa-solid fa-angles-right"></i> Ofícios
         </a>
         </p>
         <?php
@@ -149,7 +149,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/assessores/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Assessores
+        <i class="fa-solid fa-angles-right"></i> Assessores
         </a>
         </p>
         <?php
@@ -158,7 +158,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/beneficiados/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Beneficiados
+        <i class="fa-solid fa-angles-right"></i> Beneficiados
         </a>
         </p>
         <?php
@@ -172,7 +172,7 @@
         <h6 class="collapse-header"><i class="fa-solid fa-chart-pie"></i> Relatórios</h6>
         <p>
         <a url="paginas/relatorios/index.php?tipo=bairros" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Bairros
+        <i class="fa-solid fa-angles-right"></i> Bairros
         </a>
         </p>
         <p>
@@ -182,22 +182,22 @@
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=idade" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Idade
+        <i class="fa-solid fa-angles-right"></i> Idade
         </a>
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=sexo" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Sexo
+        <i class="fa-solid fa-angles-right"></i> Sexo
         </a>
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=municipios" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Municípios
+        <i class="fa-solid fa-angles-right"></i> Municípios
         </a>
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=assessores" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Assessores
+        <i class="fa-solid fa-angles-right"></i> Assessores
         </a>
         </p>
         <?php
@@ -211,7 +211,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/fontes_locais/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Fontes Locais
+        <i class="fa-solid fa-angles-right"></i> Fontes Locais
         </a>
         </p>
         <?php
@@ -220,7 +220,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/municipios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Municípios
+        <i class="fa-solid fa-angles-right"></i> Municípios
         </a>
         </p>
         <?php
@@ -229,7 +229,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/bairros/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Bairros
+        <i class="fa-solid fa-angles-right"></i> Bairros
         </a>
         </p>
         <?php
@@ -239,7 +239,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/secretarias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Secretarias
+        <i class="fa-solid fa-angles-right"></i> Secretarias
         </a>
         </p>
         <?php
@@ -248,7 +248,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/tipo_servico/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Tipo de Serviço
+        <i class="fa-solid fa-angles-right"></i> Tipo de Serviço
         </a>
         </p>
         <?php
@@ -258,7 +258,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/acao_social_tipo/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Tipo Ação Social
+        <i class="fa-solid fa-angles-right"></i> Tipo Ação Social
         </a>
         </p>
         <?php
@@ -268,7 +268,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/categorias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Categorias de Serviço
+        <i class="fa-solid fa-angles-right"></i> Categorias de Serviço
         </a>
         </p>
         <?php
@@ -277,7 +277,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/especialidades/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Especialidades
+        <i class="fa-solid fa-angles-right"></i> Especialidades
         </a>
         </p>
         <?php
@@ -286,7 +286,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/usuarios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Usuários
+        <i class="fa-solid fa-angles-right"></i> Usuários
         </a>
         </p>
         <?php
@@ -295,7 +295,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/permissoes/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Permissoes
+        <i class="fa-solid fa-angles-right"></i> Permissoes
         </a>
         </p>
         <?php
