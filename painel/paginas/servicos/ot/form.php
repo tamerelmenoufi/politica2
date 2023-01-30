@@ -238,7 +238,7 @@ if ($codigo) {
             <div NovoAssessorBG></div>
             <div NovoAssessor></div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="local_fonte">
                     Fonte Local <i class="text-danger">*</i>
                 </label>
@@ -264,46 +264,7 @@ if ($codigo) {
                     <?php endwhile; ?>
                 </select>
 
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="data_agenda">Data de Agenda <i class="text-danger"></i></label>
-                        <input
-                                type="datetime-local"
-                                class="form-control mb-2"
-                                id="data_agenda"
-                                name="data_agenda"
-                                value="<?= $codigo ? strftime('%Y-%m-%dT%H:%M:%S', strtotime($d->data_agenda)) : ''; ?>"
-                        >
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="situacao">
-                            Situação <i class="text-danger">*</i>
-                        </label>
-                        <select
-                                class="form-control mb-2"
-                                id="situacao"
-                                name="situacao"
-                                required
-                        >
-                            <?php
-                            foreach (getSituacao() as $key => $value): ?>
-                                <option
-                                    <?= ($codigo and $d->situacao == $key) ? 'selected' : ''; ?>
-                                        value="<?= $key; ?>">
-                                    <?= $value; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
+            </div> -->
 
             <div class="row">
                 <div class="col-md-6">
@@ -376,6 +337,44 @@ if ($codigo) {
                 ><?= $d->descricao; ?></textarea>
             </div>
 
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="data_agenda">Data de Agenda <i class="text-danger"></i></label>
+                        <input
+                                type="datetime-local"
+                                class="form-control mb-2"
+                                id="data_agenda"
+                                name="data_agenda"
+                                value="<?= $codigo ? strftime('%Y-%m-%dT%H:%M:%S', strtotime($d->data_agenda)) : ''; ?>"
+                        >
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="situacao">
+                            Situação <i class="text-danger">*</i>
+                        </label>
+                        <select
+                                class="form-control mb-2"
+                                id="situacao"
+                                name="situacao"
+                                required
+                        >
+                            <?php
+                            foreach (getSituacao() as $key => $value): ?>
+                                <option
+                                    <?= ($codigo and $d->situacao == $key) ? 'selected' : ''; ?>
+                                        value="<?= $key; ?>">
+                                    <?= $value; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
 
             <input type="hidden" id="codigo" value="<?= $codigo; ?>">
 
@@ -445,7 +444,7 @@ if ($codigo) {
 
         $("#especialidade").selectpicker();
 
-        $("#local_fonte").selectpicker();
+        // $("#local_fonte").selectpicker();
 
         $('#form-servicos').validate();
 
