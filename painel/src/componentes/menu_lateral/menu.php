@@ -16,7 +16,7 @@
 }
 
 .texto-novo{
-  color:red;
+  color:#ff0000;
   margin-left:20px;
 }
 </style>
