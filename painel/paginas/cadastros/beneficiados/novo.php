@@ -252,7 +252,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $("div[NovoCadastro]").css("display","none");
             $("div[NovoCadastro]").html('');
             $("#beneficiado").val('');
-            $("#beneficiado").selectpicker('refresh');
+            // $("#beneficiado").selectpicker('refresh');
+            $("#beneficiado").selectpicker('render');
         });
 
         $("#cep").blur(function () {
