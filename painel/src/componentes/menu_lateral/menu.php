@@ -26,8 +26,8 @@
 
     <div class="row mb-1 menu-cinza">
       <div class="col">
-        <a url="src/dashboard/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-home"></i> Dashboard
+        <a url="src/dashboard/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <h6><i class="fa-solid fa-home"></i> Dashboard</h6>
         </a>
       </div>
     </div>
