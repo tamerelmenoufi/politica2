@@ -15,6 +15,10 @@
   margin-left:20px;
 }
 
+.texto-novo{
+  color:red;
+  margin-left:20px;
+}
 </style>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
@@ -104,7 +108,7 @@
         if(in_array('Outros (Novo) - Visualizar', $ConfPermissoes)){
         ?>
         <p>
-        <a url="paginas/servicos/ot/index.php?categoria=9" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+        <a url="paginas/servicos/ot/index.php?categoria=9" class="text-decoration-none texto-novo" data-bs-dismiss="offcanvas" aria-label="Close">
         <i class="fa-solid fa-angles-right"></i> Outros (Novo)
         </a>
         </p>
