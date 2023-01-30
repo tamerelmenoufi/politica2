@@ -495,7 +495,7 @@ if ($codigo) {
                     $('#container-secretaria').html(response);
                 },
                 error:function(){
-                    alert('Erro')
+                    alert('Erro no carregamento')
                 }
             })
         });
