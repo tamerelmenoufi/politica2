@@ -378,11 +378,15 @@ if ($codigo) {
 
         $('#esfera').change(function () {
             var valor = $(this).val();
+            alert(valor)
             $.ajax({
                 url: '<?= $urlOficios; ?>/select_secretarias.php',
                 data: {esfera: valor},
                 success: function (response) {
                     $('#container-secretaria').html(response);
+                },
+                error:function(){
+                    alert('Erro')
                 }
             })
         });
