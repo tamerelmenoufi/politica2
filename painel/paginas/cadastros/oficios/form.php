@@ -384,6 +384,7 @@ if ($codigo) {
                 data: {esfera: valor},
                 success: function (response) {
                     $('#container-secretaria').html(response);
+                    $.alert(response);
                 }
             })
         });
