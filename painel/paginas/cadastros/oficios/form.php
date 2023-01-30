@@ -272,35 +272,35 @@ if ($codigo) {
 
         $("#numero").mask("999/99");
 
-        $("#input-id").fileinput({
-            <?php if($codigo and is_file("docs/{$codigo}.pdf")):?>
-            initialPreview: [
-                '<?= $urlOficios; ?>/docs/<?= $codigo;?>.pdf'
-            ],
-            <?php endif; ?>
-            maxFileCount: 0,
-            showCaption: true,
-            uploadExtraData: {
-                'codigo': '',
-            },
-            showCancel: true,
-            enableResumableUpload: true,
-            initialPreviewAsData: true,
-            overwriteInitial: false,
-            fileType: "pdf",
-            allowedFileExtensions: ['pdf'],
-            initialCaption: "Selecione uma arquivo no formato pdf",
-            language: 'pt-BR',
-            theme: 'fas',
-            showUpload: false,
-            fileActionSettings: {
-                showUpload: false
-            },
-            deleteUrl: "<?= $urlOficios; ?>/file-delete.php",
-            initialPreviewConfig: [
-                {caption: '<?= $codigo;?>.pdf', type: "pdf", size: "100%", width: "100%", key: 1},
-            ],
-        });
+        // $("#input-id").fileinput({
+        //     <?php if($codigo and is_file("docs/{$codigo}.pdf")):?>
+        //     initialPreview: [
+        //         '<?= $urlOficios; ?>/docs/<?= $codigo;?>.pdf'
+        //     ],
+        //     <?php endif; ?>
+        //     maxFileCount: 0,
+        //     showCaption: true,
+        //     uploadExtraData: {
+        //         'codigo': '',
+        //     },
+        //     showCancel: true,
+        //     enableResumableUpload: true,
+        //     initialPreviewAsData: true,
+        //     overwriteInitial: false,
+        //     fileType: "pdf",
+        //     allowedFileExtensions: ['pdf'],
+        //     initialCaption: "Selecione uma arquivo no formato pdf",
+        //     language: 'pt-BR',
+        //     theme: 'fas',
+        //     showUpload: false,
+        //     fileActionSettings: {
+        //         showUpload: false
+        //     },
+        //     deleteUrl: "<?= $urlOficios; ?>/file-delete.php",
+        //     initialPreviewConfig: [
+        //         {caption: '<?= $codigo;?>.pdf', type: "pdf", size: "100%", width: "100%", key: 1},
+        //     ],
+        // });
 
         $("#assessor").change(function(){
             valor = $(this).val();
