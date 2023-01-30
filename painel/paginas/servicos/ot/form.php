@@ -107,7 +107,7 @@ if ($codigo) {
     <div class="card-body">
         <form id="form-servicos">
 
-            <input type="hidden" id="tipo" name="tipo" value="1"/>
+            <input type="hidden" id="tipo" name="tipo" value="9"/>
 
             <?php
                 $query = "SELECT * FROM especialidades where servico_tipo = '9' ORDER BY descricao";
