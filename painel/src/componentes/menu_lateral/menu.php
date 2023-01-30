@@ -12,7 +12,7 @@
 
 .texto-cinza{
   color:#5e5e5e;
-  margin-left:30px;
+  margin-left:20px;
 }
 
 </style>
@@ -177,7 +177,7 @@
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=servicos" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          Serviços
+        <i class="fa-solid fa-angles-right"></i> Serviços
         </a>
         </p>
         <p>
