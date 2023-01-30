@@ -253,7 +253,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $("div[NovoCadastro]").html('');
             $("#beneficiado").val('');
             // $("#beneficiado").selectpicker('refresh');
-            $("#beneficiado").selectpicker('render');
+            $("#beneficiado").selectpicker('destroy');
+            $("#beneficiado").selectpicker('refresh');
         });
 
         $("#cep").blur(function () {
@@ -296,8 +297,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $.alert(retorno.msg);
 
                         $("#beneficiado").append('<option value="'+retorno.codigo+'">'+retorno.nome+'</option>');
-                        // $("#beneficiado").selectpicker('refresh');
-                        $("#beneficiado").selectpicker('render');
+                        $("#beneficiado").selectpicker('destroy');
+                        $("#beneficiado").selectpicker('refresh');
                         $("#beneficiado").selectpicker('val', retorno.codigo);
 
                         $("div[NovoCadastroBG]").css("display","none");
