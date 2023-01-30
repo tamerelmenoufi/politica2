@@ -6,7 +6,6 @@ $query = "SELECT * FROM secretarias WHERE esfera = '{$esfera}'";
 $result = mysqli_query($con, $query);
 
 ?>
-
 <select
         class="form-control secretaria"
         id="secretaria"
