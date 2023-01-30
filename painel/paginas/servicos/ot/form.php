@@ -304,6 +304,79 @@ if ($codigo) {
                 </div>
             </div>
 
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="esfera">
+                            Esfera <i class="text-danger">*</i>
+                        </label>
+                        <select
+                                class="form-control mb-2"
+                                id="esfera"
+                                name="esfera"
+                                required
+                        >
+                            <option value=""></option>
+                            <?php
+                            foreach (getEsfera() as $value): ?>
+                                <option
+                                    <?= ($codigo and $d->esfera == $value) ? 'selected' : ''; ?>
+                                        value="<?= $value; ?>">
+                                    <?= $value; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="secretaria">
+                            Secretaria <i class="text-danger">*</i>
+                        </label>
+                        <div id="container-secretaria">
+                            <select
+                                    class="form-control secretaria"
+                                    id="secretaria"
+                                    name="secretaria"
+                                    data-live-search="true"
+                                    data-none-selected-text="Selecione"
+                                    required
+                            >
+                                <option value=""></option>
+                                <?php
+                                if ($codigo):
+                                    $query = "SELECT * FROM secretarias WHERE esfera = '{$d->esfera}' ORDER BY descricao";
+                                    $result = mysqli_query($con, $query);
+
+                                    while ($s = mysqli_fetch_object($result)): ?>
+                                        <option
+                                            <?= ($codigo and $d->secretaria == $s->codigo) ? 'selected' : ''; ?>
+                                                value="<?= $s->codigo ?>">
+                                            <?= $s->descricao; ?>
+                                        </option>
+                                    <?php
+                                    endwhile;
+                                endif;
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <textarea
+                        id="descricao"
+                        name="descricao"
+                        class="form-control mb-2"
+                        rows="5"
+                ><?= $d->descricao; ?></textarea>
+            </div>
+
+
             <input type="hidden" id="codigo" value="<?= $codigo; ?>">
 
             <button type="submit" class="btn btn-success">Salvar</button>
@@ -411,6 +484,22 @@ if ($codigo) {
                 }
             })
         });
+
+
+        $('#esfera').change(function () {
+            var valor = $(this).val();
+            $.ajax({
+                url: '<?= $urlOficios; ?>/select_secretarias.php',
+                data: {esfera: valor},
+                success: function (response) {
+                    $('#container-secretaria').html(response);
+                },
+                error:function(){
+                    alert('Erro')
+                }
+            })
+        });
+
     });
 </script>
 
