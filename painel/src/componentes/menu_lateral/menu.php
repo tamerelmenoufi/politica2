@@ -101,6 +101,15 @@
         </p>
         <?php
         }
+        if(in_array('Outros (Novo) - Visualizar', $ConfPermissoes)){
+        ?>
+        <p>
+        <a url="paginas/servicos/ot/index.php?categoria=9" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fa-solid fa-angles-right"></i> Outros (Novo)
+        </a>
+        </p>
+        <?php
+        }
         ?>
 
 
