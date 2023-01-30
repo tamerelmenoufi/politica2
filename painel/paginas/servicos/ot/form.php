@@ -489,7 +489,7 @@ if ($codigo) {
         $('#esfera').change(function () {
             var valor = $(this).val();
             $.ajax({
-                url: '<?= $urlOficios; ?>/select_secretarias.php',
+                url: '<?= $urlServicos; ?>/select_secretarias.php',
                 data: {esfera: valor},
                 success: function (response) {
                     $('#container-secretaria').html(response);
