@@ -378,7 +378,6 @@ if ($codigo) {
 
         $('#esfera').change(function () {
             var valor = $(this).val();
-            alert(valor)
             $.ajax({
                 url: '<?= $urlOficios; ?>/select_secretarias.php',
                 data: {esfera: valor},
