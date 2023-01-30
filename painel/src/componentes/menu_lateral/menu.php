@@ -12,6 +12,7 @@
 
 .texto-cinza{
   color:#5e5e5e;
+  margin-left:30px;
 }
 
 </style>
