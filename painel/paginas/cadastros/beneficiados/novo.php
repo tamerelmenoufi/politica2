@@ -296,7 +296,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $.alert(retorno.msg);
 
                         $("#beneficiado").append('<option value="'+retorno.codigo+'">'+retorno.nome+'</option>');
-                        $("#beneficiado").selectpicker('refresh');
+                        // $("#beneficiado").selectpicker('refresh');
+                        $("#beneficiado").selectpicker('render');
                         $("#beneficiado").selectpicker('val', retorno.codigo);
 
                         $("div[NovoCadastroBG]").css("display","none");
