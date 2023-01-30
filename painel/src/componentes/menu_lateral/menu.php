@@ -26,7 +26,7 @@
     <div class="row mb-1 menu-cinza">
       <div class="col">
         <a url="src/dashboard/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Dashboard
+          <i class="fa-solid fa-home"></i> Dashboard
         </a>
       </div>
     </div>
@@ -34,14 +34,14 @@
 
     <div class="row mb-1 menu-cinza">
       <div class="col">
-        <h6>Serviços</h6>
+        <h6><i class="fa-solid fa-person-circle-plus"></i> Serviços</h6>
 
         <?php
         if(in_array('Certidão de Nascimento - Visualizar', $ConfPermissoes)){
         ?>
         <p>
           <a url="paginas/servicos/cn/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-            <i class="fa-solid fa-chart-line"></i> Certidão de Nascimento
+            Certidão de Nascimento
           </a>
         </p>
         <?php
@@ -50,7 +50,7 @@
         ?>
         <p>
         <a url="paginas/servicos/rg/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Registro Geral
+          Registro Geral
         </a>
         </p>
         <?php
@@ -59,7 +59,7 @@
         ?>
         <p>
         <a url="paginas/servicos/cras/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> CRAS
+          CRAS
         </a>
         </p>
         <?php
@@ -68,7 +68,7 @@
         ?>
         <p>
         <a url="paginas/servicos/cr/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> CR
+          CR
         </a>
         </p>
         <?php
@@ -77,7 +77,7 @@
         ?>
         <p>
         <a url="paginas/servicos/psicologia/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Psicologia
+          Psicologia
         </a>
         </p>
         <?php
@@ -86,7 +86,7 @@
         ?>
         <p>
         <a url="paginas/servicos/odontologia/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Odontologia
+          Odontologia
         </a>
         </p>
         <?php
@@ -95,7 +95,7 @@
         ?>
         <p>
         <a url="paginas/servicos/juridico/index.php?categoria=l" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Jurídico
+          Jurídico
         </a>
         </p>
         <?php
@@ -103,7 +103,7 @@
         ?>
 
 
-        <h6 class="collapse-header">Saúde</h6>
+        <h6 class="collapse-header"><i class="fa-solid fa-suitcase-medical"></i> Saúde</h6>
         <?php
         if(in_array('Saúde - Visualizar', $ConfPermissoes)){
         $q = "select * from categorias where deletado = '0' order by descricao";
@@ -112,7 +112,7 @@
         ?>
         <p>
         <a url="paginas/servicos/saude/index.php?categoria=<?=$c->codigo?>" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> <?=$c->descricao?>
+          <?=$c->descricao?>
         </a>
         </p>
         <?php
@@ -125,7 +125,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/acao_social/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Ação Social
+          Ação Social
         </a>
         </p>
         <?php
@@ -134,7 +134,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/oficios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Ofícios
+          Ofícios
         </a>
         </p>
         <?php
@@ -142,13 +142,13 @@
         ?>
 
 
-        <h6 class="collapse-header">Cadastros</h6>
+        <h6 class="collapse-header"><i class="fa-regular fa-id-card"></i> Cadastros</h6>
         <?php
         if(in_array('Assessores - Visualizar', $ConfPermissoes)){
         ?>
         <p>
         <a url="paginas/cadastros/assessores/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Assessores
+          Assessores
         </a>
         </p>
         <?php
@@ -157,7 +157,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/beneficiados/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Beneficiados
+          Beneficiados
         </a>
         </p>
         <?php
@@ -168,49 +168,49 @@
         <?php
         if(in_array('Relatórios', $ConfPermissoes)){
         ?>
-        <h6 class="collapse-header">Relatórios</h6>
+        <h6 class="collapse-header"><i class="fa-solid fa-chart-pie"></i> Relatórios</h6>
         <p>
         <a url="paginas/relatorios/index.php?tipo=bairros" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Bairros
+          Bairros
         </a>
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=servicos" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Serviços
+          Serviços
         </a>
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=idade" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Idade
+          Idade
         </a>
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=sexo" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Sexo
+          Sexo
         </a>
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=municipios" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Municípios
+          Municípios
         </a>
         </p>
         <p>
         <a url="paginas/relatorios/index.php?tipo=assessores" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Assessores
+          Assessores
         </a>
         </p>
         <?php
         }
         ?>
 
-        <h6 class="collapse-header">Relatórios</h6>
+        <h6 class="collapse-header"><i class="fa-solid fa-gears"></i> Configurações</h6>
 
         <?php
         if(in_array('Fontes Locais - Visualizar', $ConfPermissoes)){
         ?>
         <p>
         <a url="paginas/cadastros/fontes_locais/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Fontes Locais
+          Fontes Locais
         </a>
         </p>
         <?php
@@ -219,7 +219,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/municipios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Municípios
+          Municípios
         </a>
         </p>
         <?php
@@ -228,7 +228,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/bairros/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Bairros
+          Bairros
         </a>
         </p>
         <?php
@@ -238,7 +238,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/secretarias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Secretarias
+          Secretarias
         </a>
         </p>
         <?php
@@ -247,7 +247,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/tipo_servico/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Tipo de Serviço
+          Tipo de Serviço
         </a>
         </p>
         <?php
@@ -257,7 +257,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/acao_social_tipo/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Tipo Ação Social
+          Tipo Ação Social
         </a>
         </p>
         <?php
@@ -267,7 +267,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/categorias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Categorias de Serviço
+          Categorias de Serviço
         </a>
         </p>
         <?php
@@ -276,7 +276,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/especialidades/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Especialidades
+          Especialidades
         </a>
         </p>
         <?php
@@ -285,7 +285,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/usuarios/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Usuários
+          Usuários
         </a>
         </p>
         <?php
@@ -294,7 +294,7 @@
         ?>
         <p>
         <a url="paginas/cadastros/permissoes/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> Permissoes
+          Permissoes
         </a>
         </p>
         <?php
