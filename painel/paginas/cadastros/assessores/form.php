@@ -246,7 +246,7 @@ if ($codigo) {
                                 name="esfera"
                                 required
                         >
-                            <option value=""></option>
+                            <option value="">:: Selecione ::</option>
                             <?php
                             foreach (getEsfera() as $value): ?>
                                 <option
