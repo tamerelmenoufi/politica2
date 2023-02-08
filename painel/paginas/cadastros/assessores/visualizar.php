@@ -111,6 +111,11 @@ $d = mysqli_fetch_object($result);
         </div>
 
         <div class="row">
+            <div class="col-md-4 font-weight-bold">Indicação</div>
+            <div class="col-md-8"><?= $d->indicacao; ?></div>
+        </div>
+
+        <div class="row">
             <div class="col-md-4 font-weight-bold">Situação</div>
             <div class="col-md-8" style="color:<?=(($d->situacao == '1')?'green':'red')?>">
                 <?=(($d->situacao == '1')?'Ativado':'Desativado')?>

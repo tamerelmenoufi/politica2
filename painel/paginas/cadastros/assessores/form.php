@@ -332,6 +332,24 @@ if ($codigo) {
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="indicacao">
+                            Indicação <i class="text-danger">*</i>
+                        </label>
+                        <input
+                                type="text"
+                                class="form-control mb-2"
+                                id="indicacao"
+                                name="indicacao"
+                                value=" <?= $d->indicacao; ?>"
+                                required
+                        >
+                    </div>
+                </div>
+            </div>
+
 
             <div class="form-group">
                 <label for="situacao">Situação <i class="text-danger">*</i></label>
