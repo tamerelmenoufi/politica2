@@ -252,7 +252,7 @@ if ($codigo) {
                             <?= '1' == $d->situacao ? "selected" : ""; ?>
                                 value="1"
                         >
-                            Ativo
+                            Ativado
                         </option>
                 </select>
 
