@@ -30,3 +30,10 @@ function getResponsavelOptions($responsavel)
     $list = getResponsavel();
     return $list[$responsavel];
 }
+
+function getEsfera()
+{
+    return [
+        'Municipal', 'Estadual'
+    ];
+}
