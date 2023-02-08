@@ -1,0 +1,24 @@
+** Assessores
+Tela inicial: Nome, cpf, telefone, responsavel
+Cadastro: novo campo situação (ativo ou inativo)
+Se for ativo: lotação (Esfere, secretaria)
+Acrescentar o bairro no descritivo
+Quando não tem bairro, acrescentar na tela
+Acrescentar um campo de indicação (campo aberto)
+
+
+** Beneficiário
+Cadastrar o assessor responsável
+-- Apresentar o nome do assessor nos cadastros dos pedidos
+
+outros (novo)
+- retirar contato*
+- substituir retorno por indeferido
+- filtros em combinação (várias informações)
+- Histórico de datas dos status da tramitação
+
+Manter as tabelas auxiliares
+
+
+
+

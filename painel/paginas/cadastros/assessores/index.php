@@ -44,6 +44,7 @@ $result = mysqli_query($con, $query);
                 <tr>
                     <th>Nome</th>
                     <th>CPF</th>
+                    <th>Telefone</th>
                     <th>Responsável</th>
                     <th class="mw-20">Ações</th>
                 </tr>
@@ -53,6 +54,7 @@ $result = mysqli_query($con, $query);
                     <tr id="linha-<?= $d->codigo; ?>">
                         <td><?= $d->nome ?></td>
                         <td><?= $d->cpf; ?></td>
+                        <td><?= $d->telefone; ?></td>
                         <td><?= $d->responsavel; ?></td>
                         <td>
                             <button
