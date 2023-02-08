@@ -2,9 +2,10 @@
 include "config_assessores.php";
 
 $codigo = $_GET['codigo'];
-$query = "SELECT a.*, m.municipio AS municipio, s.descricao as secretaria_nome FROM assessores a "
+$query = "SELECT a.*, m.municipio AS municipio, s.descricao as secretaria_nome, b.descricao as bairro_nome FROM assessores a "
     . "LEFT JOIN municipios m ON m.codigo = a.municipio "
     . "LEFT JOIN secretarias s ON s.codigo = a.secretaria "
+    . "LEFT JOIN bairros b ON b.codigo = a.bairro "
     . "WHERE a.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
 $d = mysqli_fetch_object($result);
@@ -85,6 +86,10 @@ $d = mysqli_fetch_object($result);
         <div class="row">
             <div class="col-md-4 font-weight-bold">Município</div>
             <div class="col-md-8"><?= $d->municipio; ?></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 font-weight-bold">Bairro</div>
+            <div class="col-md-8"><?= $d->bairro_nome; ?></div>
         </div>
         <div class="row">
             <div class="col-md-4 font-weight-bold">Endereço</div>

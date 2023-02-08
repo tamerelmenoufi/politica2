@@ -191,6 +191,43 @@ if ($codigo) {
 
                     </div>
                 </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="bairro">
+                            Bairro <i class="text-danger">*</i>
+                        </label>
+                        <div id="container-bairro">
+                            <select
+                                    class="form-control bairro"
+                                    id="bairro"
+                                    name="bairro"
+                                    data-live-search="true"
+                                    data-none-selected-text="Selecione"
+                                    required
+                            >
+                                <option value="">:: Selecione ::</option>
+                                <?php
+                                if ($codigo):
+                                    $query = "SELECT * FROM bairros ORDER BY descricao";
+                                    $result = mysqli_query($con, $query);
+
+                                    while ($s = mysqli_fetch_object($result)): ?>
+                                        <option
+                                            <?= ($codigo and $d->bairro == $s->codigo) ? 'selected' : ''; ?>
+                                                value="<?= $s->codigo ?>">
+                                            <?= $s->descricao; ?>
+                                        </option>
+                                    <?php
+                                    endwhile;
+                                endif;
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-md-8">
                     <div class="form-group">
                         <label for="endereco">
