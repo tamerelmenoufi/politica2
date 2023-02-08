@@ -271,6 +271,35 @@ if ($codigo) {
 
             </div>
 
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="assessor">
+                        Assessor Responsável <i class="text-danger">*</i>
+                    </label>
+                    <select
+                            class="form-control mb-2"
+                            id="assessor"
+                            name="assessor"
+                            data-live-search="true"
+                            required
+                    >
+                        <option value="">:: Selecione ::</option>
+                        <?php
+                        $query = "SELECT * FROM assessores where deletado = '0' and situacao = '1'";
+                        $result = mysqli_query($con, $query);
+
+                        while ($m = mysqli_fetch_object($result)): ?>
+                            <option
+                                <?= ($d->assessor == $m->codigo) ? 'selected' : ''; ?>
+                                    value="<?= $m->codigo ?>">
+                                <?= $m->nome; ?>
+                            </option>
+                        <?php endwhile; ?>
+                    </select>
+
+                </div>
+            </div>
+
             <input type="hidden" id="codigo" value="<?= $codigo; ?>">
 
             <button type="submit" class="btn btn-success">Salvar</button>

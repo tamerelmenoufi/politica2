@@ -2,9 +2,9 @@
 Tela inicial: Nome, cpf, telefone, responsavel -- ok
 Cadastro: novo campo situação (ativo ou inativo) -- ok
 Se for ativo: lotação (Esfere, secretaria) --- ok
-Acrescentar o bairro no descritivo
+Acrescentar o bairro no descritivo -- ok
 Quando não tem bairro, acrescentar na tela
-Acrescentar um campo de indicação (campo aberto)
+Acrescentar um campo de indicação (campo aberto) -- ok
 
 
 ** Beneficiário
