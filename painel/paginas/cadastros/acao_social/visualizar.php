@@ -107,6 +107,14 @@ $d = mysqli_fetch_object($result);
                 <?=$d->descricao?>
             </div>
         </div>
+
+
+        <div class="row">
+            <div class="col-md-12 font-weight-bold">Situação</div>
+            <div class="col-md-12" style="color:<?=(($d->situacao == '1')?'green':'red')?>">
+                <?=$d->situacao?>
+            </div>
+        </div>
     </div>
 </div>
 
