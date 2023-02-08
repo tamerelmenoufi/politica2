@@ -16,7 +16,7 @@ $result = mysqli_query($con, $query);
 >
     <?php while ($d = mysqli_fetch_object($result)): ?>
 
-        <option value=""></option>
+        <option value="">:: Selecione ::</option>
         <?php
         $query = "SELECT * FROM secretarias WHERE esfera = '{$esfera}' ORDER BY descricao";
         $result = mysqli_query($con, $query);

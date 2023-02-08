@@ -273,7 +273,7 @@ if ($codigo) {
                                     data-none-selected-text="Selecione"
                                     required
                             >
-                                <option value=""></option>
+                                <option value="">:: Selecione ::</option>
                                 <?php
                                 if ($codigo):
                                     $query = "SELECT * FROM secretarias WHERE esfera = '{$d->esfera}' ORDER BY descricao";
@@ -304,7 +304,7 @@ if ($codigo) {
                         name="situacao"
                         required
                 >
-                    <option value=""></option>
+                    <option value="">:: Selecione ::</option>
                         <option
                             <?= '0' == $d->situacao ? "selected" : ""; ?>
                                 value="0"
