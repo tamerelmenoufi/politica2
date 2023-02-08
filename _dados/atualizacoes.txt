@@ -1,6 +1,6 @@
 ** Assessores
-Tela inicial: Nome, cpf, telefone, responsavel
-Cadastro: novo campo situação (ativo ou inativo)
+Tela inicial: Nome, cpf, telefone, responsavel -- ok
+Cadastro: novo campo situação (ativo ou inativo) -- ok
 Se for ativo: lotação (Esfere, secretaria)
 Acrescentar o bairro no descritivo
 Quando não tem bairro, acrescentar na tela

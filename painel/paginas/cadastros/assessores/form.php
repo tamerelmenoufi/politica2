@@ -231,8 +231,33 @@ if ($codigo) {
                     <?php endforeach; ?>
 
                 </select>
+            </div>
+
+            <div class="form-group">
+                <label for="situacao">Situação <i class="text-danger">*</i></label>
+                <select
+                        class="form-control mb-2"
+                        id="situacao"
+                        name="esfera"
+                        required
+                >
+                    <option value=""></option>
+                        <option
+                            <?= '0' == $d->situacao ? "selected" : ""; ?>
+                                value="0"
+                        >
+                            Desativado
+                        </option>
+                        <option
+                            <?= '1' == $d->situacao ? "selected" : ""; ?>
+                                value="1"
+                        >
+                            Ativo
+                        </option>
+                </select>
 
             </div>
+
             <input type="hidden" id="codigo" value="<?= $codigo; ?>">
 
             <button type="submit" class="btn btn-success">Salvar</button>
