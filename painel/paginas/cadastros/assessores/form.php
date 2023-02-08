@@ -238,7 +238,7 @@ if ($codigo) {
                 <select
                         class="form-control mb-2"
                         id="situacao"
-                        name="esfera"
+                        name="situacao"
                         required
                 >
                     <option value=""></option>
