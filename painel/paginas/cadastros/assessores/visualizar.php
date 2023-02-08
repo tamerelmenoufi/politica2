@@ -93,6 +93,14 @@ $d = mysqli_fetch_object($result);
             <div class="col-md-4 font-weight-bold">Responsável</div>
             <div class="col-md-8"><?= $d->responsavel; ?></div>
         </div>
+
+        <div class="row">
+            <div class="col-md-12 font-weight-bold">Situação</div>
+            <div class="col-md-12" style="color:<?=(($d->situacao == '1')?'green':'red')?>">
+                <?=$d->situacao?>
+            </div><!-- -->
+        </div>
+
     </div>
 </div>
 
