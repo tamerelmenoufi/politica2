@@ -1,5 +1,5 @@
 <?php
-include_once "config_servicos.php";
+include_once "config_assessores.php";
 
 $esfera = $_GET['esfera'];
 $query = "SELECT * FROM secretarias WHERE esfera = '{$esfera}'";
