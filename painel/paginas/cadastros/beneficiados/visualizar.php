@@ -2,8 +2,9 @@
 include "config_beneficiados.php";
 
 $codigo = $_GET['codigo'];
-$query = "SELECT a.*, m.municipio AS municipio FROM beneficiados a "
+$query = "SELECT a.*, m.municipio AS municipio, s.nome as assessor_nome FROM beneficiados a "
     . "LEFT JOIN municipios m ON m.codigo = a.municipio "
+    . "LEFT JOIN assessores s ON s.codigo = a.assessor "
     . "WHERE a.codigo = '{$codigo}'";
 $result = mysqli_query($con, $query);
 $d = mysqli_fetch_object($result);
@@ -96,6 +97,11 @@ $d = mysqli_fetch_object($result);
         <div class="row">
             <div class="col-md-4 font-weight-bold">Endereço</div>
             <div class="col-md-8"><?= $d->endereco; ?></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 font-weight-bold">Assessor Responsável</div>
+            <div class="col-md-8"><?= $d->assessor_nome; ?></div>
         </div>
     </div>
 </div>
