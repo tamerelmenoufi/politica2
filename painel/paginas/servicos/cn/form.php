@@ -344,7 +344,7 @@ if ($codigo) {
                         assessor:valor,
                     },
                     success:function(dados){
-                        $("#assessor").val(dados);
+                        $("#assessor").selectpicker('val', dados);;
                         console.log(dados);
                     },
                     error:function(){
