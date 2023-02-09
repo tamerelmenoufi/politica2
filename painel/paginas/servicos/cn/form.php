@@ -324,7 +324,7 @@ if ($codigo) {
 
         $("#beneficiado").change(function(){
             valor = $(this).val();
-            assessor = $(this).childreen("option").attr("assessor");
+            assessor = $(this).children("option").attr("assessor");
             console.log(assessor);
             if(valor === 'novo'){
                 $.ajax({
