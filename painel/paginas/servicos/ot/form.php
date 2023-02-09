@@ -406,6 +406,21 @@ if ($codigo) {
                         alert('Ocorreu um erro!');
                     }
                 });
+            }else{
+                $.ajax({
+                    url:"paginas/cadastros/beneficiados/assessor.php",
+                    type:"POST",
+                    data:{
+                        assessor:valor,
+                    },
+                    success:function(dados){
+                        $("#assessor").selectpicker('val', dados);;
+                        console.log(dados);
+                    },
+                    error:function(){
+                        alert('Ocorreu um erro!');
+                    }
+                });
             }
         });
 
