@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     unset($data['codigo']);
 
     foreach ($data as $name => $value) {
-        $attr[] = "{$name} = '" . mysql_real_escape_string($value) . "'";
+        $attr[] = "{$name} = '" . Addslashes($value) . "'";
     }
 
     $attr = implode(', ', $attr);
@@ -21,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = "INSERT INTO servicos SET {$attr}";
     }
 
-    if (mysql_query($query)) {
-        $codigo = $codigo ?: mysql_insert_id();
+    if (mysqli_query($query)) {
+        $codigo = $codigo ?: mysqli_insert_id($con);
 
         sis_logs('servicos', $codigo, $query);
 
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'status' => false,
             'msg' => 'Erro ao salvar',
             'codigo' => $codigo,
-            'mysql_error' => mysql_error(),
+            'mysql_error' =>'Error',
         ]);
     }
 
@@ -47,8 +47,8 @@ $codigo = $_GET['codigo'];
 
 if ($codigo) {
     $query = "SELECT * FROM servicos WHERE codigo = '{$codigo}'";
-    $result = mysql_query($query);
-    $d = mysql_fetch_object($result);
+    $result = mysqli_query($query);
+    $d = mysqli_fetch_object($result);
 }
 
 ?>
@@ -121,8 +121,8 @@ if ($codigo) {
 
             <?php
                 $query = "SELECT * FROM especialidades where servico_tipo = '6' ORDER BY descricao";
-                $result = mysql_query($query);
-                if(mysql_num_rows($result)){
+                $result = mysqli_query($query);
+                if(mysqli_num_rows($result)){
             ?>
 
             <div class="form-group">
@@ -140,7 +140,7 @@ if ($codigo) {
                     <option value=""></option>
                     <?php
 
-                    while ($b = mysql_fetch_object($result)): ?>
+                    while ($b = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->especialidade == $b->codigo) ? 'selected' : ''; ?>
                                 value="<?= $b->codigo ?>">
@@ -169,9 +169,9 @@ if ($codigo) {
                     <option value="novo">Novo Cadastro</option>
                     <?php
                     $query = "SELECT * FROM beneficiados ORDER BY nome";
-                    $result = mysql_query($query);
+                    $result = mysqli_query($query);
 
-                    while ($b = mysql_fetch_object($result)): ?>
+                    while ($b = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->beneficiado == $b->codigo) ? 'selected' : ''; ?>
                                 value="<?= $b->codigo ?>">
@@ -231,9 +231,9 @@ if ($codigo) {
                     <option value="novo">Novo Cadastro</option>
                     <?php
                     $query = "SELECT * FROM assessores ORDER BY nome";
-                    $result = mysql_query($query);
+                    $result = mysqli_query($query);
 
-                    while ($a = mysql_fetch_object($result)): ?>
+                    while ($a = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->assessor == $a->codigo) ? 'selected' : ''; ?>
                                 value="<?= $a->codigo ?>">
@@ -261,9 +261,9 @@ if ($codigo) {
                     <option value=""></option>
                     <?php
                     $query = "SELECT * FROM local_fontes where servico_tipo = '6' ORDER BY descricao";
-                    $result = mysql_query($query);
+                    $result = mysqli_query($query);
 
-                    while ($l = mysql_fetch_object($result)): ?>
+                    while ($l = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->local_fonte == $l->codigo) ? 'selected' : ''; ?>
                                 value="<?= $l->codigo ?>">
@@ -322,6 +322,8 @@ if ($codigo) {
 <script>
     $(function () {
         //$('#contato').mask('(99) 99999-9999');
+
+        Carregando('none');
 
         $("#assessor").selectpicker();
 
