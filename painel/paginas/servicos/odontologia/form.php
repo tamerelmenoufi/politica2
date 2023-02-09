@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = "INSERT INTO servicos SET {$attr}";
     }
 
-    if (mysqli_query($query)) {
+    if (mysqli_query($con, $query)) {
         $codigo = $codigo ?: mysqli_insert_id($con);
 
         sis_logs('servicos', $codigo, $query);
@@ -47,7 +47,7 @@ $codigo = $_GET['codigo'];
 
 if ($codigo) {
     $query = "SELECT * FROM servicos WHERE codigo = '{$codigo}'";
-    $result = mysqli_query($query);
+    $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 }
 
@@ -96,17 +96,6 @@ if ($codigo) {
         display:none;
     }
 </style>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb shadow bg-gray-custom">
-        <li class="breadcrumb-item"><a href="#" url="content.php">Início</a></li>
-        <li class="breadcrumb-item" aria-current="page">
-            <a href="#" url="<?= $urlServicos; ?>/index.php">Serviços</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-            <?= $codigo ? 'Alterar' : 'Cadastrar'; ?>
-        </li>
-    </ol>
-</nav>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -121,7 +110,7 @@ if ($codigo) {
 
             <?php
                 $query = "SELECT * FROM especialidades where servico_tipo = '6' ORDER BY descricao";
-                $result = mysqli_query($query);
+                $result = mysqli_query($con, $query);
                 if(mysqli_num_rows($result)){
             ?>
 
@@ -169,7 +158,7 @@ if ($codigo) {
                     <option value="novo">Novo Cadastro</option>
                     <?php
                     $query = "SELECT * FROM beneficiados ORDER BY nome";
-                    $result = mysqli_query($query);
+                    $result = mysqli_query($con, $query);
 
                     while ($b = mysqli_fetch_object($result)): ?>
                         <option
@@ -231,7 +220,7 @@ if ($codigo) {
                     <option value="novo">Novo Cadastro</option>
                     <?php
                     $query = "SELECT * FROM assessores ORDER BY nome";
-                    $result = mysqli_query($query);
+                    $result = mysqli_query($con, $query);
 
                     while ($a = mysqli_fetch_object($result)): ?>
                         <option
@@ -261,7 +250,7 @@ if ($codigo) {
                     <option value=""></option>
                     <?php
                     $query = "SELECT * FROM local_fontes where servico_tipo = '6' ORDER BY descricao";
-                    $result = mysqli_query($query);
+                    $result = mysqli_query($con, $query);
 
                     while ($l = mysqli_fetch_object($result)): ?>
                         <option
