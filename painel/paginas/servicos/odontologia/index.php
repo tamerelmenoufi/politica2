@@ -65,7 +65,7 @@ $_SESSION['saude_xls'] = false;
             Serviços - Odontologia
         </h6>
         <?php
-        if (in_array('Odontologia - Cadastrar', $ConfPermissoes)) {
+        if (@in_array('Odontologia - Cadastrar', $ConfPermissoes)) {
         ?>
         <span>
         <?php
@@ -116,7 +116,7 @@ $_SESSION['saude_xls'] = false;
                                 <i class="fa-regular fa-eye text-info"></i>
                             </button>
                             <?php
-                            if (in_array('Odontologia - Editar', $ConfPermissoes)) {
+                            if (@in_array('Odontologia - Editar', $ConfPermissoes)) {
                                 ?>
                                 <button
                                         class="btn btn-sm btn-link"
@@ -126,7 +126,7 @@ $_SESSION['saude_xls'] = false;
                                 </button>
                                 <?php
                             }
-                            if (in_array('Odontologia - Excluir', $ConfPermissoes)) {
+                            if (@in_array('Odontologia - Excluir', $ConfPermissoes)) {
                                 ?>
                                 <button class="btn btn-sm btn-link btn-excluir" data-codigo="<?= $d->codigo ?>">
                                     <i class="fa-regular fa-trash-can text-danger"></i>
