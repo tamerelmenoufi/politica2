@@ -22,7 +22,7 @@ $d = mysqli_fetch_object($result);
         </h6>
         <div class="d-block">
             <?php
-            if(in_array('Odontologia - Cadastrar', $ConfPermissoes)){
+            if(@in_array('Odontologia - Cadastrar', $ConfPermissoes)){
             ?>
             <button
                     type="button"
@@ -34,7 +34,7 @@ $d = mysqli_fetch_object($result);
             </button>
             <?php
             }
-            if(in_array('Odontologia - Editar', $ConfPermissoes)){
+            if(@in_array('Odontologia - Editar', $ConfPermissoes)){
             ?>
             <button
                     type="button"
@@ -46,7 +46,7 @@ $d = mysqli_fetch_object($result);
             </button>
             <?php
             }
-            if(in_array('Odontologia - Logs', $ConfPermissoes)){
+            if(@in_array('Odontologia - Logs', $ConfPermissoes)){
                 ?>
                     <button
                             type="button"
@@ -57,7 +57,7 @@ $d = mysqli_fetch_object($result);
                     </button>
                 <?php
                 }
-            if(in_array('Odontologia - Excluir', $ConfPermissoes)){
+            if(@in_array('Odontologia - Excluir', $ConfPermissoes)){
             ?>
             <button
                     type="button"
