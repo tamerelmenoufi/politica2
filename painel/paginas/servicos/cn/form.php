@@ -324,8 +324,6 @@ if ($codigo) {
 
         $("#beneficiado").change(function(){
             valor = $(this).val();
-            assessor = $(this).children("option").attr("assessor");
-            console.log(assessor);
             if(valor === 'novo'){
                 $.ajax({
                     url:"paginas/cadastros/beneficiados/novo.php",
@@ -333,6 +331,21 @@ if ($codigo) {
                         $("div[NovoCadastro]").html(dados);
                         $("div[NovoCadastroBG]").css("display","block");
                         $("div[NovoCadastro]").css("display","block");
+                    },
+                    error:function(){
+                        alert('Ocorreu um erro!');
+                    }
+                });
+            }else{
+                $.ajax({
+                    url:"paginas/cadastros/beneficiados/assessor.php",
+                    type:"POST",
+                    data:{
+                        assessor:valor,
+                    },
+                    success:function(dados){
+                        $("#assessor").val(dados);
+                        console.log(dados);
                     },
                     error:function(){
                         alert('Ocorreu um erro!');
