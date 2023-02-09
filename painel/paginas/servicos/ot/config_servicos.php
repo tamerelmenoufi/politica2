@@ -14,7 +14,7 @@ function getSituacao()
 {
     return [
         'tramitacao' => 'Tramitação',
-        'retorno' => 'Retorno',
+        'indeferido' => 'Indeferido',
         'concluido' => 'Concluído',
     ];
 }
