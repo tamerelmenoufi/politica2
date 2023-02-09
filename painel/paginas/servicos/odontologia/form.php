@@ -409,7 +409,7 @@ if ($codigo) {
                     let retorno = JSON.parse(response);
 
                     if (retorno.status) {
-                        tata.success('Sucesso', retorno.msg);
+                        // tata.success('Sucesso', retorno.msg);
 
                         $.ajax({
                             url: '<?= $urlServicos; ?>/visualizar.php',
