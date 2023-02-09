@@ -166,7 +166,9 @@ if ($codigo) {
                     while ($b = mysqli_fetch_object($result)): ?>
                         <option
                             <?= ($codigo and $d->beneficiado == $b->codigo) ? 'selected' : ''; ?>
-                                value="<?= $b->codigo ?>">
+                                value="<?= $b->codigo ?>"
+                                assessor="<?= $b->assessor ?>"
+                            >
                             <?= $b->nome; ?>
                         </option>
                     <?php endwhile; ?>
@@ -322,6 +324,8 @@ if ($codigo) {
 
         $("#beneficiado").change(function(){
             valor = $(this).val();
+            assessor = $(this).childreen.("option").attr("assessor");
+            console.log(assessor);
             if(valor === 'novo'){
                 $.ajax({
                     url:"paginas/cadastros/beneficiados/novo.php",

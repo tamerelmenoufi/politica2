@@ -8,7 +8,7 @@ Acrescentar um campo de indicação (campo aberto) -- ok
 
 
 ** Beneficiário
-Cadastrar o assessor responsável
+Cadastrar o assessor responsável -- ok
 -- Apresentar o nome do assessor nos cadastros dos pedidos
 
 outros (novo)
