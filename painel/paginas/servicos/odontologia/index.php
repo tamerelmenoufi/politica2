@@ -145,17 +145,16 @@ $_SESSION['saude_xls'] = false;
 
 <script>
     $(function(){ Carregando('none');
-        var table = $('#datatable').DataTable();
 
-        $('#filtro-situacao').selectpicker();
+        // $('#filtro-situacao').selectpicker();
 
-        $('#filtro-situacao').change(function () {
-            var val = $(this).val();
-            console.log(val);
-            table.column(3)
-                .search(val ? '^' + $(this).val() + '$' : val, true, false)
-                .draw();
-        });
+        // $('#filtro-situacao').change(function () {
+        //     var val = $(this).val();
+        //     console.log(val);
+        //     table.column(3)
+        //         .search(val ? '^' + $(this).val() + '$' : val, true, false)
+        //         .draw();
+        // });
 
         $('.btn-excluir').click(function () {
             var codigo = $(this).data('codigo');
