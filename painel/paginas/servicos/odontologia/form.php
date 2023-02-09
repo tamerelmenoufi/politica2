@@ -407,19 +407,17 @@ if ($codigo) {
                 data: dados,
                 success: function (response) {
                     let retorno = JSON.parse(response);
-
                     if (retorno.status) {
                         // tata.success('Sucesso', retorno.msg);
-
                         $.ajax({
                             url: '<?= $urlServicos; ?>/visualizar.php',
                             data: {codigo: retorno.codigo},
                             success: function (response) {
-                                $('#palco').html(response);
+                                $('#paginaHome').html(response);
                             }
                         })
                     } else {
-                        tata.error('Error', retorno.msg);
+                        // tata.error('Error', retorno.msg);
                     }
                 }
             })
