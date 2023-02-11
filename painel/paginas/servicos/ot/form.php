@@ -2,7 +2,7 @@
 include "config_servicos.php";
 
 if($_POST['acao'] == 'situacao_log'){
-    $query = "select * from servicos where codigo = '{$_POST['codigo']}'";
+    echo $query = "select * from servicos where codigo = '{$_POST['codigo']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
     $logs = json_decode($d->situacao_log);
