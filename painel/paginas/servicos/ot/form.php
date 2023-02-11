@@ -418,6 +418,12 @@ if ($codigo) {
 
         $("#beneficiado").selectpicker();
 
+        atual = '<?=$d->situacao?>';
+        if(!atual){
+            situacao = $(this).val();
+            $("#situacao_log").val(situacao);
+        }
+
         $("#situacao").change(function(){
             atual = '<?=$d->situacao?>';
             situacao = $(this).val();
