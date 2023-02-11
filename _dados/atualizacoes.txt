@@ -12,10 +12,10 @@ Cadastrar o assessor responsável -- ok
 -- Apresentar o nome do assessor nos cadastros dos pedidos -- ok
 
 outros (novo)
-- retirar contato*
-- substituir retorno por indeferido
-- filtros em combinação (várias informações)
-- Histórico de datas dos status da tramitação
+- retirar contato* -- ok
+- substituir retorno por indeferido -- ok
+- filtros em combinação (várias informações) -- ok
+- Histórico de datas dos status da tramitação -- ok
 
 Manter as tabelas auxiliares
 

@@ -109,7 +109,7 @@
         ?>
         <p>
         <a url="paginas/servicos/ot/index.php?categoria=9" class="text-decoration-none texto-novo" data-bs-dismiss="offcanvas" aria-label="Close">
-        <i class="fa-solid fa-angles-right"></i> Outros (Novo)
+        <i class="fa-solid fa-angles-right"></i> Gabinete (Demandas)
         </a>
         </p>
         <?php
