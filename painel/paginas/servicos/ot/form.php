@@ -353,12 +353,6 @@ if ($codigo) {
 
                 <div class="col-md-6">
 
-
-
-
-
-
-
                     <div class="form-group">
                         <label for="situacao">
                             Situação <i class="text-danger">*</i>
@@ -385,7 +379,7 @@ if ($codigo) {
                             <span class="input-group-text">
                                 Histórico
                             </span>
-                            <button class="btn btn-secondary">
+                            <button type="button" class="btn btn-secondary btn-sm">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                             </button>
                         </div>
