@@ -421,7 +421,7 @@ if ($codigo) {
         $("#situacao").change(function(){
             atual = '<?=$d->situacao?>';
             situacao = $(this).val();
-            if(atual != situacao){
+            if(atual != situacao || !atual){
                 $("#situacao_log").val(situacao);
             }else{
                 $("#situacao_log").val('');
