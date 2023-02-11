@@ -62,7 +62,7 @@ $_SESSION['saude_xls'] = false;
 <div class="card shadow m-3">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">
-            Serviços - OUTROS (Novo)
+            Serviços - Gabinete (Demandas)
         </h6>
         <?php
         if (in_array('Outros (Novo) - Cadastrar', $ConfPermissoes)) {
