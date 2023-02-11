@@ -6,11 +6,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $attr = [];
 
     $codigo = $data['codigo'] ?: null;
+    $situacao_log = $data['situacao_log'];
+    $situacao_log_novo = $data['situacao_log_novo'];
 
     unset($data['codigo']);
+    unset($data['situacao_log']);
+    unset($data['situacao_log_novo']);
 
     foreach ($data as $name => $value) {
         $attr[] = "{$name} = '" . Addslashes($value) . "'";
+    }
+
+    if ($situacao_log) {
+        if($situacao_log_novo == 'novo'){
+            $attr[] = "situacao_log = '{{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}}'";
+        }else{
+            $attr[] = "situacao_log = concat( SUBSTR(situacao_log, 1, LENGTH (situacao_log)-1) ,',{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}}')";
+        }
     }
 
     $attr = implode(', ', $attr);
@@ -379,6 +391,8 @@ if ($codigo) {
                             <span class="input-group-text">
                                 Histórico
                             </span>
+                            <input type="hidden" id="situacao_log" name="situacao_log" value="" />
+                            <input type="hidden" id="situacao_log_novo" name="situacao_log_novo" value="<?=((!$d->situacao_log)?'novo':false)?>" />
                             <button type="button" class="btn btn-secondary">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                             </button>
@@ -400,10 +414,19 @@ if ($codigo) {
     $(function(){ Carregando('none');
         //$('#contato').mask('(99) 99999-9999');
 
-
         $("#assessor").selectpicker();
 
         $("#beneficiado").selectpicker();
+
+        $("#situacao").change(function(){
+            atual = '<?=$d->situacao?>';
+            situacao = $(this).val();
+            if(atual != situacao){
+                $("#situacao_log").val(situacao);
+            }else{
+                $("#situacao_log").val('');
+            }
+        });
 
         $("#beneficiado").change(function(){
             valor = $(this).val();
