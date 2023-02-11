@@ -6,7 +6,10 @@ if($_POST['acao'] == 'situacao_log'){
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
     $logs = json_decode($d->situacao_log);
-    print_r($logs);
+    foreach($logs as $ind => $reg){
+        echo "Situação: ".$reg->situacao."<br>";
+        echo "Data: ".$reg->data."<br><hr>";
+    }
     exit();
 }
 
