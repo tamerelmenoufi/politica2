@@ -361,7 +361,7 @@ if ($codigo) {
                         <div class="input-group">
 
                             <select
-                                    class="form-control mb-2"
+                                    class="form-control"
                                     id="situacao"
                                     name="situacao"
                                     required
@@ -379,7 +379,7 @@ if ($codigo) {
                             <span class="input-group-text">
                                 Histórico
                             </span>
-                            <button type="button" class="btn btn-secondary btn-sm">
+                            <button type="button" class="btn btn-secondary">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                             </button>
                         </div>
