@@ -312,29 +312,6 @@ if ($codigo) {
                 }
             })
         });
-
-        $("#ver_logs_situacao").click(function(){
-            codigo = $(this).attr("codigo");
-            $.ajax({
-                url:"<?= $urlServicos; ?>/form.php",
-                type:"POST",
-                data:{
-                    codigo,
-                    acao:'situacao_log'
-                },
-                success:function(dados){
-                    $.dialog({
-                        title:"Histórico de Situações",
-                        type:"primary",
-                        columnClass:'col-md-8',
-                        content:dados
-                    });
-                }
-            });
-
-
-        });
-
     });
 </script>
 
