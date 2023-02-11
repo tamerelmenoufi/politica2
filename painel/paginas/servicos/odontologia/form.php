@@ -1,6 +1,18 @@
 <?php
 include "config_servicos.php";
 
+if($_POST['acao'] == 'situacao_log'){
+    $query = "select * from servicos where codigo = '{$_POST['codigo']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    $logs = json_decode($d->situacao_log);
+    foreach($logs as $ind => $reg){
+        echo "Situação: ".$reg->status."<br>";
+        echo "Data: ".$reg->data."<br><hr>";
+    }
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $_POST;
     $attr = [];
@@ -422,6 +434,29 @@ if ($codigo) {
                 }
             })
         });
+
+        $("#ver_logs_situacao").click(function(){
+            codigo = $(this).attr("codigo");
+            $.ajax({
+                url:"<?= $urlServicos; ?>/form.php",
+                type:"POST",
+                data:{
+                    codigo,
+                    acao:'situacao_log'
+                },
+                success:function(dados){
+                    $.dialog({
+                        title:"Histórico de Situações",
+                        type:"primary",
+                        columnClass:'col-md-8',
+                        content:dados
+                    });
+                }
+            });
+
+
+        });
+
     });
 </script>
 
