@@ -1,6 +1,16 @@
 <?php
 include "config_servicos.php";
 
+if($_POST['acao'] == 'situacao_log'){
+    $query = "select * from servicos where codigo = '{$_POST['codigo']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    $logs = json_decode($d->situacao_log);
+    print_r($logs);
+    exit();
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $_POST;
     $attr = [];
@@ -393,7 +403,7 @@ if ($codigo) {
                             </span>
                             <input type="hidden" id="situacao_log" name="situacao_log" value="" />
                             <input type="hidden" id="situacao_log_novo" name="situacao_log_novo" value="<?=((!$d->situacao_log)?'novo':false)?>" />
-                            <button type="button" class="btn btn-secondary">
+                            <button type="button" class="btn btn-secondary" id="ver_logs_situacao" codigo="<?=$d->codigo?>">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                             </button>
                         </div>
@@ -554,6 +564,28 @@ if ($codigo) {
                     alert('Erro no carregamento')
                 }
             })
+        });
+
+        $("#ver_logs_situacao").click(function(){
+            codigo = $(this).attr("codigo");
+            $.ajax({
+                url:"<?= $urlServicos; ?>/form.php",
+                type:"POST",
+                data:{
+                    codigo,
+                    acao:'situacao_log'
+                },
+                success:function(dados){
+                    $.dialog({
+                        title:"Histórico de Situações",
+                        type:"primary",
+                        columnClass:'col-md-8',
+                        content:dados
+                    });
+                }
+            });
+
+
         });
 
     });
