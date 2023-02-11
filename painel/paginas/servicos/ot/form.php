@@ -418,9 +418,9 @@ if ($codigo) {
 
         $("#beneficiado").selectpicker();
 
-        atual = '<?=$d->situacao?>';
+        atual = '<?=$d->situacao_log?>';
         if(!atual){
-            situacao = $(this).val();
+            situacao = $("#situacao").val();
             $("#situacao_log").val(situacao);
         }
 
