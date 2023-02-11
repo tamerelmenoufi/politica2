@@ -5,8 +5,8 @@ if($_POST['acao'] == 'situacao_log'){
     $query = "select * from servicos where codigo = '{$_POST['codigo']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
-    echo $logs = json_decode($d->situacao_log);
-    echo ($d->situacao_log);
+    $logs = json_decode($d->situacao_log);
+    print_r($logs);
     exit();
 }
 
@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($situacao_log) {
         if($situacao_log_novo == 'novo'){
-            $attr[] = "situacao_log = '{{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}}'";
+            $attr[] = "situacao_log = '[{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}]'";
         }else{
-            $attr[] = "situacao_log = concat( SUBSTR(situacao_log, 1, LENGTH (situacao_log)-1) ,',{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}}')";
+            $attr[] = "situacao_log = concat( SUBSTR(situacao_log, 1, LENGTH (situacao_log)-1) ,',{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}]')";
         }
     }
 
