@@ -177,7 +177,7 @@ if ($codigo) {
             <div NovoCadastroBG></div>
             <div NovoCadastro></div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="contato">
                     Contato <i class="text-danger">*</i>
                 </label>
@@ -190,7 +190,7 @@ if ($codigo) {
                         required
                 >
 
-            </div>
+            </div> -->
 
             <!-- <div class="form-group">
                 <label for="especialista">
@@ -352,25 +352,44 @@ if ($codigo) {
                 </div>
 
                 <div class="col-md-6">
+
+
+
+
+
+
+
                     <div class="form-group">
                         <label for="situacao">
                             Situação <i class="text-danger">*</i>
                         </label>
-                        <select
-                                class="form-control mb-2"
-                                id="situacao"
-                                name="situacao"
-                                required
-                        >
-                            <?php
-                            foreach (getSituacao() as $key => $value): ?>
-                                <option
-                                    <?= ($codigo and $d->situacao == $key) ? 'selected' : ''; ?>
-                                        value="<?= $key; ?>">
-                                    <?= $value; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
+
+                        <div class="input-group">
+
+                            <select
+                                    class="form-control mb-2"
+                                    id="situacao"
+                                    name="situacao"
+                                    required
+                            >
+                                <?php
+                                foreach (getSituacao() as $key => $value): ?>
+                                    <option
+                                        <?= ($codigo and $d->situacao == $key) ? 'selected' : ''; ?>
+                                            value="<?= $key; ?>">
+                                        <?= $value; ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+
+                            <span class="input-group-text">
+                                Histórico
+                            </span>
+                            <button class="btn btn-secondary">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
