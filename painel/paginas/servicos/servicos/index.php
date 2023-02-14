@@ -112,7 +112,7 @@ $_SESSION['saude_xls'] = false;
 
 <script>
     $(function(){ Carregando('none');
-        $("#datatable").DataTable();
+        //$("#datatable").DataTable();
 
         $('.btn-excluir').click(function () {
             var codigo = $(this).data('codigo');

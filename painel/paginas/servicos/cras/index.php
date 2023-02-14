@@ -147,7 +147,7 @@ $_SESSION['saude_xls'] = false;
 
 <script>
     $(function(){ Carregando('none');
-        var table = $("#datatable").DataTable();
+        var table = //$("#datatable").DataTable();
 
         $('#filtro-situacao').selectpicker();
 

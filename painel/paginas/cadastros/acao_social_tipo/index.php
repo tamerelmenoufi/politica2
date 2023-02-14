@@ -85,7 +85,7 @@ $result = mysqli_query($con, $query);
 
 <script>
     $(function(){ Carregando('none');
-        $("#datatable").DataTable();
+        //$("#datatable").DataTable();
 
         $('.btn-excluir').click(function () {
             var codigo = $(this).data('codigo');
