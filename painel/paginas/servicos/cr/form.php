@@ -309,21 +309,33 @@ if ($codigo) {
                         <label for="situacao">
                             Situação <i class="text-danger">*</i>
                         </label>
-                        <select
-                                class="form-control mb-2"
-                                id="situacao"
-                                name="situacao"
-                                required
-                        >
-                            <?php
-                            foreach (getSituacao() as $key => $value): ?>
-                                <option
-                                    <?= ($codigo and $d->situacao == $key) ? 'selected' : ''; ?>
-                                        value="<?= $key; ?>">
-                                    <?= $value; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
+                        <div class="input-group">
+
+                            <select
+                                    class="form-control"
+                                    id="situacao"
+                                    name="situacao"
+                                    required
+                            >
+                                <?php
+                                foreach (getSituacao() as $key => $value): ?>
+                                    <option
+                                        <?= ($codigo and $d->situacao == $key) ? 'selected' : ''; ?>
+                                            value="<?= $key; ?>">
+                                        <?= $value; ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+
+                            <span class="input-group-text">
+                                Histórico
+                            </span>
+                            <input type="hidden" id="situacao_log" name="situacao_log" value="" />
+                            <input type="hidden" id="situacao_log_novo" name="situacao_log_novo" value="<?=((!$d->situacao_log)?'novo':false)?>" />
+                            <button type="button" class="btn btn-secondary" id="ver_logs_situacao" codigo="<?=$d->codigo?>">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
