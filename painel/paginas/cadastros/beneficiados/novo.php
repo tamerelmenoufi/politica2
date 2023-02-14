@@ -35,12 +35,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'status' => true,
             'msg' => 'Dados salvo com sucesso',
             'codigo' => $codigo,
+            'nome' => $_POST['nome'],
         ]);
     } else {
         echo json_encode([
             'status' => false,
             'msg' => 'Erro ao salvar',
             'codigo' => $codigo,
+            'nome' => $_POST['nome'],
 
         ]);
     }
