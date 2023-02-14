@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo json_encode(['status' => true, 'msg' => 'Dados salvo com sucesso']);
     } else {
-        echo json_encode(['status' => false, 'msg' => 'Error ao salvar item', 'mysqlError' => mysql_error()]);
+        echo json_encode(['status' => false, 'msg' => 'Error ao salvar item', 'mysqlError' => mysqli_error()]);
     }
     exit();
 }

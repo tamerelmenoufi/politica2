@@ -39,7 +39,7 @@ $result1 = mysqli_query($con, $query . $query1);
 
 $data = [];
 
-while ($row = mysql_fetch_array($result1)) {
+while ($row = mysqli_fetch_array($result1)) {
     $sub_array = [];
 
     $btn_acoes = '<button class="btn btn-sm btn-link" url="' . $urlBeneficiados . '/visualizar.php?codigo=' . $row['codigo'] . '">

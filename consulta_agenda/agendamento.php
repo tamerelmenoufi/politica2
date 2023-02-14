@@ -3,7 +3,7 @@ include "../lib/includes.php";
 
 
 $servico_tipo = $_POST['servico_tipo'];
-$senha = mysql_real_escape_string($_POST['senha']);
+$senha = mysqli_real_escape_string($_POST['senha']);
 $local_fonte = $_POST['local_fonte'];
 
 $_SESSION['servico_tipo'] = $servico_tipo;
@@ -24,14 +24,14 @@ if (!$servico_tipo) {
         . "lf.senha = '{$senha}' AND lf.deletado = '0'";
 }
 
-$result = mysql_query($query);
+$result = mysqli_query($con, $query);
 
-if (!@mysql_num_rows($result)) {
+if (!@mysqli_num_rows($result)) {
     echo 0;
     exit();
 }
 
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 $colunas = "s.*, b.nome AS b_nome, c.descricao AS c_descricao, st.tipo AS st_tipo, lf.descricao AS lf_descricao";
 
 $queryEventos = "SELECT {$colunas} FROM servicos s "
@@ -42,7 +42,7 @@ $queryEventos = "SELECT {$colunas} FROM servicos s "
     . "WHERE {$whereLocalFonte} {$whereServicoTipo} "
     . "s.data_agenda > 0 AND s.deletado = '0'";
 
-$resultEventos = mysql_query($queryEventos);
+$resultEventos = mysqli_query($con, $queryEventos);
 
 $eventos = [];
 $titulo = "";
@@ -55,7 +55,7 @@ if (!$servico_tipo) {
 
 $i = 0;
 
-while ($dadosEventos = mysql_fetch_object($resultEventos)) :
+while ($dadosEventos = mysqli_fetch_object($resultEventos)) :
     $eventos[] = [
         'id' => $dadosEventos->codigo,
         'title' => formata_datahora($dadosEventos->data_agenda, HORA_MINUTO) . ' - ' . $dadosEventos->b_nome . " - " . $dadosEventos->st_tipo . " (" . ($dadosEventos->lf_descricao ?: 'Outros') . ")",
@@ -153,9 +153,9 @@ endwhile;
                     . "s.data_agenda = 0 AND lf.deletado = '0'";
                 #echo $querySemAgenda;
 
-                $resultSemAgenda = mysql_query($querySemAgenda);
+                $resultSemAgenda = mysqli_query($con, $querySemAgenda);
 
-                $numSemAgenda = @mysql_num_rows($resultSemAgenda);
+                $numSemAgenda = @mysqli_num_rows($resultSemAgenda);
                 ?>
                 <li class="nav-item dropdown no-arrow mx-1">
                     <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -177,7 +177,7 @@ endwhile;
                             Agendamento sem data
                         </h6>
                         <?php if ($numSemAgenda) : ?>
-                            <?php while ($dadosSemAgenda = mysql_fetch_object($resultSemAgenda)) : ?>
+                            <?php while ($dadosSemAgenda = mysqli_fetch_object($resultSemAgenda)) : ?>
                                 <a class="dropdown-item d-flex align-items-center sem-agenda" href="#"
                                    id="sem_agenda_<?= $dadosSemAgenda->s_codigo; ?>"
                                    data-cod_servico="<?= $dadosSemAgenda->s_codigo; ?>">

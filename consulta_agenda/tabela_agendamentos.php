@@ -13,12 +13,12 @@ $query = "SELECT s.*, b.nome AS b_nome, lf.descricao AS lf_descricao, st.tipo AS
     . "LEFT JOIN beneficiados b ON b.codigo = s.beneficiado ";
 
 $whereGeral = "WHERE {$_SESSION['whereServicoTipo']} {$_SESSION['whereLocalFonte']} s.data_agenda LIKE '%{$data}%'  ORDER BY data_agenda";
-$result = mysql_query($query . $whereGeral);
+$result = mysqli_query($con, $query . $whereGeral);
 
 $mes = date('m', strtotime($data));
 $whereMes = "WHERE {$_SESSION['whereServicoTipo']} {$_SESSION['whereLocalFonte']} DATE_FORMAT(s.data_agenda, \"%m\") = '{$mes}' "
     . "ORDER BY data_agenda";
-$resultMes = mysql_query($query . $whereMes);
+$resultMes = mysqli_query($con, $query . $whereMes);
 
 $mesArray = [
     '01' => 'Janeiro',
@@ -56,8 +56,8 @@ $mesArray = [
         </thead>
         <tbody>
         <?php
-        if (mysql_num_rows($result)):
-            while ($d = mysql_fetch_object($result)):
+        if (mysqli_num_rows($result)):
+            while ($d = mysqli_fetch_object($result)):
                 $data = formata_datahora($d->data_agenda, DATA_HM);
                 ?>
                 <tr>
@@ -104,8 +104,8 @@ $mesArray = [
         </thead>
         <tbody>
         <?php
-        if (mysql_num_rows($resultMes)):
-            while ($d = mysql_fetch_object($resultMes)):
+        if (mysqli_num_rows($resultMes)):
+            while ($d = mysqli_fetch_object($resultMes)):
                 $data = formata_datahora($d->data_agenda, DATA_HM);
                 ?>
                 <tr>

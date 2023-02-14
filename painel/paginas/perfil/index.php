@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['usuario']['usuario'] = $data['usuario'];
         echo json_encode(["status" => true, "msg" => "Dados alterado com sucesso"]);
     } else {
-        echo json_encode(["status" => false, "msg" => "Error ao tentar alterar", 'mysqlError' => mysql_error()]);
+        echo json_encode(["status" => false, "msg" => "Error ao tentar alterar", 'mysqlError' => mysqli_error()]);
     }
 
     exit();

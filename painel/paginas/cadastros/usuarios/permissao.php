@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo json_encode(['status' => true, 'msg' => 'Permissões salvas com sucesso']);
     } else {
-        echo json_encode(['status' => false, 'msg' => 'Error ao alterar permissões', 'mysqlError' => mysql_error()]);
+        echo json_encode(['status' => false, 'msg' => 'Error ao alterar permissões', 'mysqlError' => mysqli_error()]);
     }
 
     exit();

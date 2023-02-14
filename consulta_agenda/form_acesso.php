@@ -36,9 +36,9 @@ include_once "../lib/includes.php";
                                     <option value="">Geral</option>
                                     <?php
                                     $query = "SELECT * FROM servico_tipo WHERE deletado = '0' ORDER BY tipo";
-                                    $result = mysql_query($query);
+                                    $result = mysqli_query($con, $query);
 
-                                    while ($d = mysql_fetch_object($result)): ?>
+                                    while ($d = mysqli_fetch_object($result)): ?>
                                         <option value="<?= $d->codigo ?>"><?= $d->tipo; ?></option>
                                     <?php endwhile; ?>
                                         <option value="acao_social">Ação Social</option>

@@ -4,13 +4,13 @@
 
 
     $query = "SELECT * FROM `acao_social` where codigo = '{$_GET['codigo']}'";
-    $result = mysql_query($query);
-    $d = mysql_fetch_object($result);
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
 
     $q = "select * from acao_social_tipo where codigo in(".($d->servicos?:'0').")";
-    $r = mysql_query($q);
+    $r = mysqli_query($con, $q);
     $S = [];
-    while($s = mysql_fetch_object($r)){
+    while($s = mysqli_fetch_object($r)){
         $S[] = $s->tipo;
     }
 

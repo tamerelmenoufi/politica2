@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'atualizar_situ
 
     $query = "UPDATE servicos SET situacao = '{$situacao}' WHERE codigo = '{$codigo}'";
 
-    if (mysql_query($query)) {
+    if (mysqli_query($con, $query)) {
         echo json_encode(['status' => true, 'situacao' => getSituacaoOptions($situacao)]);
     } else {
         echo json_encode(['status' => false]);
@@ -23,9 +23,9 @@ $query = "SELECT s.*, b.nome AS b_nome, cpf,nome_mae, data_nascimento, telefone,
     . "LEFT JOIN servico_tipo st ON st.codigo = s.tipo "
     . "WHERE s.codigo = '{$codigo}'";
 
-$result = mysql_query($query);
+$result = mysqli_query($con, $query);
 
-$d = mysql_fetch_object($result);
+$d = mysqli_fetch_object($result);
 ?>
 
 

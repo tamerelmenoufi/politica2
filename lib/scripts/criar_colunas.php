@@ -19,6 +19,6 @@ $tabelas = [
 
 foreach ($tabelas as $tabela) {
     $query = "ALTER TABLE {$tabela} ADD COLUMN deletado ENUM('0','1') DEFAULT '0'";
-    $result = mysql_query($query);
+    $result = mysqli_query($con, $query);
     echo $tabela . ' - ' . ($result ? 'Criado' : 'Não Criado') . '<br>';
 }

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
 
         echo json_encode(['status' => true, 'msg' => 'Registro excluído com sucesso']);
     } else {
-        echo json_encode(['status' => false, 'msg' => 'Error ao excluír', 'mysqlError' => mysql_error()]);
+        echo json_encode(['status' => false, 'msg' => 'Error ao excluír', 'mysqlError' => mysqli_error()]);
     }
     exit();
 }

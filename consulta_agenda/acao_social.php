@@ -5,8 +5,8 @@ include_once "../lib/includes.php";
 $eventos = [];
 
 $query = "SELECT * FROM `acao_social`";
-$result = mysql_query($query);
-while($d = mysql_fetch_object($result)){
+$result = mysqli_query($con, $query);
+while($d = mysqli_fetch_object($result)){
 
     $eventos[] = [
         'id' => $d->codigo,

@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data_agenda = $_POST['data_agenda'];
 
     $query = "UPDATE servicos SET data_agenda = '{$data_agenda}' WHERE codigo = '{$cod_servico}'";
-    if (mysql_query($query)) {
+    if (mysqli_query($con, $query)) {
 
         $query = "SELECT s.*, b.nome AS b_nome, c.descricao AS c_descricao, st.tipo AS st_tipo, lf.descricao AS lf_descricao FROM servicos s "
             . "LEFT JOIN servico_tipo st ON st.codigo = s.tipo "
@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             . "LEFT JOIN categorias c ON c.codigo = s.categoria "
             . " WHERE s.codigo = '{$cod_servico}'";
 
-        $result = mysql_query($query);
-        $d = mysql_fetch_object($result);
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
 
         echo json_encode([
             'status' => true,
@@ -45,8 +45,8 @@ $query = "SELECT s.*, st.tipo AS st_tipo, b.nome AS b_nome, lf.descricao AS lf_d
     . "LEFT JOIN categorias c ON c.codigo = s.categoria "
     . "WHERE s.codigo = '{$cod_servico}'";
 
-$result = mysql_query($query);
-$d = mysql_fetch_object($result);
+$result = mysqli_query($con, $query);
+$d = mysqli_fetch_object($result);
 
 ?>
 

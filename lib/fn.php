@@ -4,14 +4,14 @@ function sis_logs($tabela, $codigo, $query, $operacao = null)
 {
     $usuario = $_SESSION['usuario']['codigo'];
     $operacao = $operacao ?: strtoupper(trim(explode(' ', $query)[0]));
-    $query = mysql_real_escape_string($query);
+    $query = mysqli_real_escape_string($query);
     $data = date("Y-m-d H:i:s");
 
     $query_log = "INSERT INTO sis_logs "
         . "SET usuario = '{$usuario}', registro = '{$codigo}', operacao = '{$operacao}', query = '{$query}', "
         . "tabela = '{$tabela}', data = '{$data}'";
 
-    mysql_query($query_log);
+    mysqli_query($con, $query_log);
 }
 
 function exclusao($tabela, $codigo, $fisica = false)
@@ -22,7 +22,7 @@ function exclusao($tabela, $codigo, $fisica = false)
         $query = "UPDATE {$tabela} SET deletado = '1' WHERE codigo = '{$codigo}'";
     }
 
-    if (mysql_query($query)) {
+    if (mysqli_query($con, $query)) {
         sis_logs($codigo, $query, $tabela, 'DELETE');
         return true;
     } else {
@@ -33,8 +33,8 @@ function exclusao($tabela, $codigo, $fisica = false)
 function ListaLogs($tabela, $registro){
     $Query = [];
     $query = "select a.*, b.nome from sis_logs a left join usuarios b on a.usuario=b.codigo where a.tabela = '{$tabela}' and a.registro = '{$registro}' order by a.codigo asc";
-    $result = mysql_query($query);
-    while($d = mysql_fetch_object($result)){
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
 
         switch($d->operacao){
 

@@ -29,13 +29,13 @@ include_once "../lib/includes.php";
 
             <?php
                     $query = "SELECT * FROM `acao_social` where data like '%{$_GET['data']}%'";
-                    $result = mysql_query($query);
-                    while($d = mysql_fetch_object($result)){
+                    $result = mysqli_query($con, $query);
+                    while($d = mysqli_fetch_object($result)){
 
                         $q = "select * from acao_social_tipo where codigo in(".($d->servicos?:'0').")";
-                        $r = mysql_query($q);
+                        $r = mysqli_query($con, $q);
                         $S = [];
-                        while($s = mysql_fetch_object($r)){
+                        while($s = mysqli_fetch_object($r)){
                             $S[] = $s->tipo;
                         }
 
