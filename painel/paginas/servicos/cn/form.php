@@ -35,7 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }else{
             $attr[] = "situacao_log = concat( SUBSTR(situacao_log, 1, LENGTH (situacao_log)-1) ,',{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}]')";
         }
+    }elseif($situacao_log_novo == 'novo'){
+            $attr[] = "situacao_log = '[{\"status\":\"tramitacao\", \"data\":\"".date("d/m/Y H:i:s")."\"}]'";
     }
+
     $attr = implode(', ', $attr);
 
     if ($codigo) {
