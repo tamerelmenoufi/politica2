@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo json_encode([
             'status' => false,
-            'msg' => 'Erro ao salvar',
+            'msg' => 'Erro ao salvar'.$query,
             'codigo' => $codigo,
 
         ]);
