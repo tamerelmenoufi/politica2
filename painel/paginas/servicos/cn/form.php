@@ -360,6 +360,22 @@ if ($codigo) {
 
         $("#beneficiado").selectpicker();
 
+        atual = '<?=$d->situacao_log?>';
+        if(!atual){
+            situacao = $("#situacao").val();
+            $("#situacao_log").val(situacao);
+        }
+
+        $("#situacao").change(function(){
+            atual = '<?=$d->situacao?>';
+            situacao = $(this).val();
+            if(atual != situacao || !atual){
+                $("#situacao_log").val(situacao);
+            }else{
+                $("#situacao_log").val('');
+            }
+        });
+
         $("#beneficiado").change(function(){
             valor = $(this).val();
             if(valor === 'novo'){
