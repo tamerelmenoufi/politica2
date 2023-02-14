@@ -18,13 +18,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $attr = [];
 
     $codigo = $data['codigo'] ?: null;
+    $situacao_log = $data['situacao_log'];
+    $situacao_log_novo = $data['situacao_log_novo'];
 
     unset($data['codigo']);
+    unset($data['situacao_log']);
+    unset($data['situacao_log_novo']);
 
     foreach ($data as $name => $value) {
         $attr[] = "{$name} = '" . Addslashes($value) . "'";
     }
-
+    if ($situacao_log) {
+        if($situacao_log_novo == 'novo'){
+            $attr[] = "situacao_log = '[{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}]'";
+        }else{
+            $attr[] = "situacao_log = concat( SUBSTR(situacao_log, 1, LENGTH (situacao_log)-1) ,',{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}]')";
+        }
+    }elseif($situacao_log_novo == 'novo'){
+            $attr[] = "situacao_log = '[{\"status\":\"tramitacao\", \"data\":\"".date("d/m/Y H:i:s")."\"}]'";
+    }
     $attr = implode(', ', $attr);
 
     if ($codigo) {
@@ -277,6 +289,23 @@ if ($codigo) {
 
         $('#form-servicos').validate();
 
+        atual = '<?=$d->situacao_log?>';
+        if(!atual){
+            situacao = $("#situacao").val();
+            $("#situacao_log").val(situacao);
+        }
+
+        $("#situacao").change(function(){
+            atual = '<?=$d->situacao?>';
+            situacao = $(this).val();
+            if(atual != situacao || !atual){
+                $("#situacao_log").val(situacao);
+            }else{
+                $("#situacao_log").val('');
+            }
+        });
+
+
         $('#form-servicos').submit(function (e) {
             e.preventDefault();
 
@@ -312,6 +341,30 @@ if ($codigo) {
                 }
             })
         });
+
+
+        $("#ver_logs_situacao").click(function(){
+            codigo = $(this).attr("codigo");
+            $.ajax({
+                url:"<?= $urlServicos; ?>/form.php",
+                type:"POST",
+                data:{
+                    codigo,
+                    acao:'situacao_log'
+                },
+                success:function(dados){
+                    $.dialog({
+                        title:"Histórico de Situações",
+                        type:"primary",
+                        columnClass:'col-md-8',
+                        content:dados
+                    });
+                }
+            });
+
+
+        });
+
     });
 </script>
 
