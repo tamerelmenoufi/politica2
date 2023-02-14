@@ -415,13 +415,15 @@ if ($codigo) {
                     if (retorno.status) {
                         $.alert(retorno.msg);
 
-                        $.ajax({
-                            url: '<?= $urlAssessores; ?>/visualizar.php',
-                            data: {codigo: retorno.codigo},
-                            success: function (response) {
-                                $("#paginaHome").html(response);
-                            }
-                        })
+
+                        $("#assessor").append('<option value="'+retorno.codigo+'">'+retorno.nome+'</option>');
+                        $("#assessor").selectpicker('refresh');
+                        $("#assessor").selectpicker('val', retorno.codigo);
+
+                        $("div[NovoAssessorBG]").css("display","none");
+                        $("div[NovoAssessor]").css("display","none");
+                        $("div[NovoAssessor]").html('');
+
                     } else {
                         $.alert(retorno.msg);
                     }

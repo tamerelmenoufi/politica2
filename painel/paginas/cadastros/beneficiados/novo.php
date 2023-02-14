@@ -362,13 +362,22 @@ if ($codigo) {
                     if (retorno.status) {
                         $.alert(retorno.msg);
 
-                        $.ajax({
-                            url: '<?= $urlBeneficiados; ?>/visualizar.php',
-                            data: {codigo: retorno.codigo},
-                            success: function (response) {
-                                $("#paginaHome").html(response);
-                            }
-                        })
+                        $("#beneficiado").append('<option value="'+retorno.codigo+'">'+retorno.nome+'</option>');
+                        $("#beneficiado").selectpicker('destroy');
+                        $("#beneficiado").selectpicker('refresh');
+                        $("#beneficiado").selectpicker('val', retorno.codigo);
+
+                        $("div[NovoCadastroBG]").css("display","none");
+                        $("div[NovoCadastro]").css("display","none");
+                        $("div[NovoCadastro]").html('');
+                        // $.ajax({
+                        //     url: '<?= $urlBeneficiados; ?>/visualizar.php',
+                        //     data: {codigo: retorno.codigo},
+                        //     success: function (response) {
+                        //         $("#paginaHome").html(response);
+                        //     }
+                        // })
+
                     } else {
                         $.alert(retorno.msg);
                     }
