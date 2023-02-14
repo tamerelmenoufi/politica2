@@ -21,11 +21,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $codigo = $data['codigo'] ?: null;
 
     unset($data['codigo']);
+    unset($data['situacao_log']);
+    unset($data['situacao_log_novo']);
 
     foreach ($data as $name => $value) {
         $attr[] = "{$name} = '" . Addslashes($value) . "'";
     }
-
+    if ($situacao_log) {
+        if($situacao_log_novo == 'novo'){
+            $attr[] = "situacao_log = '[{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}]'";
+        }else{
+            $attr[] = "situacao_log = concat( SUBSTR(situacao_log, 1, LENGTH (situacao_log)-1) ,',{\"status\":\"{$situacao_log}\", \"data\":\"".date("d/m/Y H:i:s")."\"}]')";
+        }
+    }
     $attr = implode(', ', $attr);
 
     if ($codigo) {
