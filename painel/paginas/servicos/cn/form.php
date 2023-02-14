@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $attr = [];
 
     $codigo = $data['codigo'] ?: null;
+    $situacao_log = $data['situacao_log'];
+    $situacao_log_novo = $data['situacao_log_novo'];
 
     unset($data['codigo']);
     unset($data['situacao_log']);
