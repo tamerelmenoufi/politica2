@@ -223,7 +223,7 @@ if ($codigo) {
                         >
                             <option value=""></option>
                             <?php
-                            $query = "SELECT * FROM bairros where municipio = '{$d->municipio}' deletado = '0'";
+                            $query = "SELECT * FROM bairros where deletado != '1' ORDER BY descricao";
                             $result = mysqli_query($con, $query);
 
                             while ($m = mysqli_fetch_object($result)): ?>

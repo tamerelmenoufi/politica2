@@ -209,8 +209,8 @@ if ($codigo) {
                             >
                                 <option value="">:: Selecione ::</option>
                                 <?php
-                                if ($codigo):
-                                    $query = "SELECT * FROM bairros ORDER BY descricao";
+                                // if ($codigo):
+                                    $query = "SELECT * FROM bairros where deletado != '1' ORDER BY descricao";
                                     $result = mysqli_query($con, $query);
 
                                     while ($s = mysqli_fetch_object($result)): ?>
@@ -221,7 +221,7 @@ if ($codigo) {
                                         </option>
                                     <?php
                                     endwhile;
-                                endif;
+                                // endif;
                                 ?>
                             </select>
                         </div>
