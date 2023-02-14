@@ -1,5 +1,6 @@
 <?php
 
+
 include "config_beneficiados.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -7,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $attr = [];
 
     $codigo = $data['codigo'] ?: null;
+    //TETSE
 
     unset($data['codigo']);
 
@@ -18,21 +20,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $attr = implode(', ', $attr);
 
-    $query = "INSERT INTO beneficiados SET {$attr}";
+    if ($codigo) {
+        $query = "UPDATE beneficiados SET {$attr} WHERE codigo = '{$codigo}'";
+    } else {
+        $query = "INSERT INTO beneficiados SET {$attr}";
+    }
 
     if (mysqli_query($con, $query)) {
-        $codigo = mysqli_insert_id($con);
+        $codigo = $codigo ?: mysqli_insert_id($con);
 
         sis_logs('beneficiados', $codigo, $query);
 
         echo json_encode([
             'status' => true,
-            'msg' => 'Salvo com sucesso',
-            'nome' => $_POST['nome'],
+            'msg' => 'Dados salvo com sucesso',
             'codigo' => $codigo,
         ]);
     } else {
-
         echo json_encode([
             'status' => false,
             'msg' => 'Erro ao salvar',
@@ -44,22 +48,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
+$codigo = $_GET['codigo'];
+
+if ($codigo) {
+    $query = "SELECT * FROM beneficiados WHERE codigo = '{$codigo}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+}
 
 ?>
 
-<style>
-    .btn-fechar{
-        position:absolute;
-        right:20px;
-        top:20px;
-        cursor:pointer;
-        font-size:20px;
-    }
-</style>
-
+<div class="card shadow m-3">
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">
+            <?= $codigo ? 'Alterar' : 'Cadastrar'; ?> beneficiados
+        </h6>
+    </div>
+    <div class="card-body">
         <form id="form-beneficiados">
-            <h3>CADASTRO DE NOVO BENEFICIADO</h3>
-            <span Fechar class="btn-fechar"><i class="fas fa-times"></i></span>
             <div class="form-group">
                 <label for="nome">Nome <i class="text-danger">*</i></label>
                 <input
@@ -149,6 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 id="email"
                                 name="email"
                                 value="<?= $d->email; ?>"
+
                         >
 
                     </div>
@@ -172,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-group">
                         <label for="municipio">
                             Municipio <i class="text-danger">*</i>
@@ -200,9 +207,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     </div>
                 </div>
-                <div class="col-md-6">
+
+
+                <div class="col-md-4">
                     <div class="form-group">
-                        <label for="cep">
+                        <label for="bairro">
+                            Bairro <i class="text-danger">*</i>
+                        </label>
+                        <select
+                                class="form-control mb-2"
+                                id="bairro"
+                                name="bairro"
+                                data-live-search="true"
+                                required
+                        >
+                            <option value=""></option>
+                            <?php
+                            $query = "SELECT * FROM bairros where deletado = '0'";
+                            $result = mysqli_query($con, $query);
+
+                            while ($m = mysqli_fetch_object($result)): ?>
+                                <option
+                                    <?= ($codigo and $d->bairro == $m->codigo) ? 'selected' : ''; ?>
+                                        value="<?= $m->codigo ?>">
+                                    <?= $m->descricao; ?>
+                                </option>
+                            <?php endwhile; ?>
+                        </select>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="cpf">
                             CEP <i class="text-danger"></i>
                         </label>
                         <input
@@ -232,8 +271,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             </div>
 
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="assessor">
+                        Assessor Responsável <i class="text-danger">*</i>
+                    </label>
+                    <select
+                            class="form-control mb-2"
+                            id="assessor"
+                            name="assessor"
+                            data-live-search="true"
+                            required
+                    >
+                        <option value="">:: Selecione ::</option>
+                        <?php
+                        $query = "SELECT * FROM assessores where deletado = '0' and situacao = '1'";
+                        $result = mysqli_query($con, $query);
+
+                        while ($m = mysqli_fetch_object($result)): ?>
+                            <option
+                                <?= ($d->assessor == $m->codigo) ? 'selected' : ''; ?>
+                                    value="<?= $m->codigo ?>">
+                                <?= $m->nome; ?>
+                            </option>
+                        <?php endwhile; ?>
+                    </select>
+
+                </div>
+            </div>
+
+            <input type="hidden" id="codigo" value="<?= $codigo; ?>">
+
             <button type="submit" class="btn btn-success">Salvar</button>
         </form>
+    </div>
+</div>
 
 <script>
     $(function(){ Carregando('none');
@@ -246,16 +318,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $('#municipio').selectpicker();
 
         $('#form-beneficiados').validate();
-
-        $("span[Fechar]").click(function(){
-            $("div[NovoCadastroBG]").css("display","none");
-            $("div[NovoCadastro]").css("display","none");
-            $("div[NovoCadastro]").html('');
-            $("#beneficiado").val('');
-            // $("#beneficiado").selectpicker('refresh');
-            $("#beneficiado").selectpicker('destroy');
-            $("#beneficiado").selectpicker('refresh');
-        });
 
         $("#cep").blur(function () {
             var cep = $(this).val().replace(/\D/g, '');
@@ -283,8 +345,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (!$(this).valid()) return false;
 
+            var codigo = $('#codigo').val();
             var dados = $(this).serializeArray();
 
+            if (codigo) {
+                dados.push({name: 'codigo', value: codigo})
+            }
 
             $.ajax({
                 url: '<?= $urlBeneficiados; ?>/novo.php',
@@ -296,22 +362,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (retorno.status) {
                         $.alert(retorno.msg);
 
-                        $("#beneficiado").append('<option value="'+retorno.codigo+'">'+retorno.nome+'</option>');
-                        $("#beneficiado").selectpicker('destroy');
-                        $("#beneficiado").selectpicker('refresh');
-                        $("#beneficiado").selectpicker('val', retorno.codigo);
-
-                        $("div[NovoCadastroBG]").css("display","none");
-                        $("div[NovoCadastro]").css("display","none");
-                        $("div[NovoCadastro]").html('');
-                        // $.ajax({
-                        //     url: '<?= $urlBeneficiados; ?>/visualizar.php',
-                        //     data: {codigo: retorno.codigo},
-                        //     success: function (response) {
-                        //         $("#paginaHome").html(response);
-                        //     }
-                        // })
-
+                        $.ajax({
+                            url: '<?= $urlBeneficiados; ?>/visualizar.php',
+                            data: {codigo: retorno.codigo},
+                            success: function (response) {
+                                $("#paginaHome").html(response);
+                            }
+                        })
                     } else {
                         $.alert(retorno.msg);
                     }
