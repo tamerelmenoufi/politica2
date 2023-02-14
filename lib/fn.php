@@ -4,7 +4,7 @@ function sis_logs($tabela, $codigo, $query, $operacao = null)
 {
     $usuario = $_SESSION['usuario']['codigo'];
     $operacao = $operacao ?: strtoupper(trim(explode(' ', $query)[0]));
-    $query = mysqli_real_escape_string($query);
+    $query = mysqli_real_escape_string($con, $query);
     $data = date("Y-m-d H:i:s");
 
     $query_log = "INSERT INTO sis_logs "

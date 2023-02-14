@@ -3,7 +3,7 @@ include "../lib/includes.php";
 
 
 $servico_tipo = $_POST['servico_tipo'];
-$senha = mysqli_real_escape_string($_POST['senha']);
+$senha = mysqli_real_escape_string($con, $_POST['senha']);
 $local_fonte = $_POST['local_fonte'];
 
 $_SESSION['servico_tipo'] = $servico_tipo;
