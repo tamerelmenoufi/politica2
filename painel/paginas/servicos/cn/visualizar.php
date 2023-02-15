@@ -167,15 +167,16 @@ Carregando('none');
             }
         })
 
-        $(".voltar").click(function(){
-            $.ajax({
-                url:"<?= $urlServicos; ?>/index.php",
-                type:"POST",
-                success:function(dados){
-                    $("#paginaHome").html(dados);
-                }
-            });
-        });
-
     });
+
+    $(".voltar").click(function(){
+        $.ajax({
+            url:"<?= $urlServicos; ?>/index.php",
+            type:"POST",
+            success:function(dados){
+                $("#paginaHome").html(dados);
+            }
+        });
+    });
+
 </script>
