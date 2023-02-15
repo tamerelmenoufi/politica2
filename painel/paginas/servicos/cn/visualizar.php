@@ -69,7 +69,9 @@ $d = mysqli_fetch_object($result);
             <?php
             }
             ?>
-            <button type="button" class="btn btn-danger voltar">Voltar</button>
+           <button type="button" class="btn btn-secondary voltar btn-sm">
+            <i class="fa fa-house"></i> 
+             Voltar</button>
         </div>
     </div>
     <div class="card-body">
