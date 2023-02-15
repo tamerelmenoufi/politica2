@@ -69,6 +69,7 @@ $d = mysqli_fetch_object($result);
             <?php
             }
             ?>
+            <button type="button" class="btn btn-danger voltar">Voltar</button>
         </div>
     </div>
     <div class="card-body">
@@ -165,5 +166,16 @@ Carregando('none');
                 }
             }
         })
+
+        $(".voltar").click(function(){
+            $.ajax({
+                url:"<?= $urlServicos; ?>/index.php",
+                type:"POST",
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            });
+        });
+
     });
 </script>
