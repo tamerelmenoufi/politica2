@@ -344,6 +344,7 @@ if ($codigo) {
             <input type="hidden" id="codigo" value="<?= $codigo; ?>">
 
             <button type="submit" class="btn btn-success">Salvar</button>
+            <button type="button" class="btn btn-danger voltar">Voltar</button>
         </form>
     </div>
 </div>
@@ -501,6 +502,16 @@ if ($codigo) {
 
         });
 
+    });
+
+    $(".voltar").click(function(){
+        $.ajax({
+            url:"<?= $urlServicos; ?>/index.php",
+            type:"POST",
+            success:function(dados){
+                $("#paginaHome").html(dados);
+            }
+        });
     });
 </script>
 
