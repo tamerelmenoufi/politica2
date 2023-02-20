@@ -55,6 +55,9 @@ $d = mysqli_fetch_object($result);
             <?php
             }
             ?>
+             <button type="button" class="btn btn-secondary voltar btn-sm">
+            <i class="fa fa-house"></i> 
+             Voltar</button>
         </div>
     </div>
     <div class="card-body">
@@ -153,5 +156,15 @@ $d = mysqli_fetch_object($result);
                 }
             }
         })
+    });
+
+    $(".voltar").click(function(){
+        $.ajax({
+            url:"<?= $servicoTipo; ?>/index.php",
+            type:"POST",
+            success:function(dados){
+                $("#paginaHome").html(dados);
+            }
+        });
     });
 </script>
