@@ -84,7 +84,7 @@ $d = mysqli_fetch_object($result);
             }
             ?>
 
-<button type="button" class="btn btn-secondary voltar btn-sm">
+<button style="margin-left:3px" type="button" class="btn btn-secondary voltar btn-sm">
             <i class="fa fa-house"></i> 
              Voltar</button>
         </div>
