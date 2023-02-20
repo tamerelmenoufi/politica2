@@ -379,7 +379,7 @@ if ($codigo) {
     });
     $(".voltar").click(function(){
         $.ajax({
-            url:"<?= $servicoTipo; ?>/index.php",
+            url:"<?= $urlBeneficiados; ?>/index.php",
             type:"POST",
             success:function(dados){
                 $("#paginaHome").html(dados);
